@@ -10,7 +10,13 @@ I have not add LIKE and COMMENT system yet, hopefully soon I add those features 
 
 ## Language
 **PHP**
-## DATABASE<br />
+ <br />
+
+## DATABASE
 **MySQL**
-## version <br />
+
+ <br />
+
+ ## version
+
 **1.0.0.0**
