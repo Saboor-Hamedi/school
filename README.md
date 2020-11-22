@@ -9,8 +9,8 @@ thier knowledge through that blog, it's like facebook, you share post and poeple
 I have not add LIKE and COMMENT system yet, hopefully soon I add those features too
 
 ##Language
-**PHP**
+**PHP**<br />
 ##DATABASE
-**MySQL**
+**MySQL**<br />
 ##version 
 **1.0.0.0**
