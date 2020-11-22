@@ -1,0 +1,8 @@
+{
+    "compile-hero.disable-compile-files-on-did-save-code": false,
+    "auto-close-tag.fullMode": true,
+    "better-comments.highlightPlainText": true,
+    "editor.semanticTokenColorCustomizations": null,
+    "php.executablePath": "",
+    "editor.formatOnPaste": true
+}

@@ -1,0 +1,39 @@
+
+*, *::after, *::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+}
+div, section, h1, h2, h3, h4, h5, h6, p, 
+input, lable button{
+  margin: 0;
+  padding: 0;
+}
+#login_message{
+  padding: 0px;
+  margin: 0px;
+  text-align: center;
+  margin-bottom: 10px;
+  transition: all 0.5 ease-in-out;
+  background-color: azure;
+  border-radius: 5px;
+}
+#main{
+  background-color: rgb(0, 0, 0);
+  
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+.wrapper{
+  position: absolute;
+  left: 0;
+  width: 300px;
+  transform: translateY(1rem);
+  background-color: rgba(0, 0, 0, 0.753);
+  padding: 10px;
+  border-radius: 10px;
+}

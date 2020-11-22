@@ -1,0 +1,607 @@
+*,*::after,*::before{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  overflow: auto;
+  height: 100%;
+}
+:focus {
+  outline: none;
+}
+.empty {
+  background-color: #ddffdd;
+}
+.custom-bread {
+  width: 100%;
+  padding: 0;
+}
+
+/* row */
+.row{
+  background-color: #3fa1a9;
+}
+/* main */
+.main{
+  background: #3fa1a9;
+  padding: 0;
+  margin: 0;
+}
+.content{
+ padding: 10px;
+
+}
+/* unset bs3 setting */
+.modal-open {
+  overflow: auto;
+}
+.table_image {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.table-content {
+  height: 400px;
+  overflow-x: auto;
+}
+#turn-on-scroll {
+  padding: 0;
+  margin: 0;
+  height: 400px;
+  overflow: auto;
+}
+.table-cotent{
+  width: 100%;
+ 
+}
+
+.grades{
+  background-color: rgba(0, 0, 0, 0.795);
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.grades:nth-child(1){
+  margin-top: 10px;
+}
+.grades h3{
+  color: white;
+  font-size: 16px;
+}
+table{
+  width: 100%;
+}
+thead, tbody, tr, th, td{
+  text-align: center;
+  padding: 10px;
+  color: white;
+  
+ 
+}
+#classes_table td:nth-child(3) {
+  width: 20px;
+}
+.form-box input {
+  margin-top: 5px;
+}
+
+.fa-edit {
+  color: blue;
+}
+.fa-trash-alt {
+  color: red;
+}
+
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.582);
+}
+
+.modal-dialog {
+  margin: 100px auto;
+  max-width: 300px;
+}
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin-top: 10px;
+}
+.modal-header h5 {
+  color: white;
+}
+/* file */
+.card {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  
+}
+
+img {
+  width: auto;
+  height: 100%;
+}
+.close:focus {
+  outline: none;
+}
+.teacher-image {
+  text-align: center;
+}
+.card-header {
+   background-color: rgba(228, 28, 28, 0.199);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.card-header h5 {
+  color: white;
+  font-size: 1.5rem;
+}
+img {
+  max-width: 100%;
+}
+/* this is the main content */
+
+.amdin-content {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.admin-content-file {
+  background-color: white;
+  position: relative;
+}
+.preview {
+  height: 200px;
+  overflow: auto;
+
+  margin-bottom: 10px;
+}
+.admin-content-file label {
+  position: absolute;
+  display: block;
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 10px;
+  height: 200px;
+  border: 1px dashed black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.admin-content-file input[type="file"] {
+  display: none;
+}
+
+.inputs input {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.inputs input:focus {
+  outline: none;
+  border: none;
+}
+textarea {
+  resize: none;
+  font-size: 16px;
+  height: 180px;
+}
+.admin-content-file i {
+  font-size: 50px;
+  color: black;
+}
+.admin-content-file img {
+  width: 100%;
+  display: none;
+}
+.submit_bnt_admin button {
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #3fa1a9;
+  color: white;
+  cursor: pointer;
+  outline: none;
+}
+/* this is for drop down on the class file */
+.insert_class_search_div {
+  display: block;
+  margin-top: 4px;
+}
+#country-list {
+  height: 100px;
+  overflow: auto;
+  list-style: none;
+  margin-top: 3px;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+}
+
+#country-list li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  background: #ccc;
+  border-bottom: #bbb9b9 1px solid;
+}
+#country-list li:hover {
+  background: #ece3d2;
+  cursor: pointer;
+}
+#search_box {
+  border: #a8d4b1 1px solid;
+  border-radius: 4px;
+}
+@media only screen and (max-width: 900px) {
+  .amdin-content #admin-section {
+    height: auto;
+  }
+}
+.alert {
+  display: block;
+  text-align: center;
+}
+
+/* student area */
+.student-bio-details {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 2px #ccc;
+}
+
+/* the body details */
+.student-details-body {
+  padding: 10px;
+}
+
+/* this is the student name and bio on the top*/
+.student-bio-profile-name {
+  padding: 10px;
+  border-radius: 5px;
+}
+.student-bio-profile-name h1,
+p {
+  text-align: center;
+}
+.student-bio-profile-name h1 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.student-bio-profile-name p {
+  font-weight: normal;
+  font-size: 1rem;
+  color: black;
+}
+
+/* this is the social media profiles of students */
+.social-media-profiles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+}
+.student_icons {
+  margin: 10px;
+  background-color: #3fa1a9;
+}
+.social-media-profiles i {
+  font-size: 20px;
+  margin: 10px;
+  border-radius: 50%;
+}
+.social-media-profiles a {
+  font-size: 15px;
+}
+/* this is the footer */
+.student-footer-profile {
+  padding: 10px;
+}
+/* student files */
+section.file-box {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 1.6rem;
+}
+section.file-box .student-box-body {
+  position: relative;
+  background-color: hsl(0, 100%, 100%);
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 2px 3px #ccc;
+}
+section.file-box .student-box-body .title {
+  background-color: rgba(228, 28, 28, 0.199);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section.file-box .student-box-body .title h4 i {
+  color: red;
+}
+.section.file-box .student-box-body .attachement {
+  margin-top: 2rem;
+}
+section.file-box .student-box-body .description {
+  padding: 10px;
+  margin-bottom: 10px;
+
+  height: auto;
+  width: 100%;
+  
+}
+section.file-box .student-box-body .file-date {
+  position: absolute;
+  bottom: 0;
+  padding: 5px;
+  font-size: 14px;
+  background-color: rgba(228, 28, 28, 0.199);
+  width: 100%;
+}
+/* end */
+
+/* this is the modal */
+.student_inputs {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+.student_inputs input,
+textarea {
+  max-width: 100%;
+  padding: 5px;
+  margin-top: 5px;
+}
+.student_inputs textarea:focus,
+input:focus {
+  outline: none;
+}
+
+/* sticky note */
+.notes {
+  background-color: white;
+  box-shadow: 0 0 5px 2px #ccc;
+  height: 500px;
+  overflow: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.sticky {
+  font: 20px "Short Stack", "Gloria Hallelujah", cursive;
+  line-height: 1.5;
+  border: 0;
+  border-radius: 3px;
+  background: linear-gradient(rgb(249, 239, 175), rgb(247, 233, 141));
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  min-height: 250px;
+  margin: 10px 10px;
+  transition: 0.3s;
+  float: left;
+  display: none;
+  vertical-align: top;
+}
+
+#header,
+#navbar,
+#navbar ul {
+  background: rgb(249, 239, 175);
+  height: 50px;
+  width: 100%;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+
+#navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+#navbar li {
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+#navbar li:hover {
+  padding: 20px;
+  margin: 0;
+  box-sizing: border-box;
+  overflow-y: hidden;
+  background: white;
+}
+.sticky-content::-webkit-scrollbar {
+  width: 10px;
+}
+.sticky-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.sticky-content::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.sticky-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.sticky-header {
+  height: 30px;
+  width: inherit;
+  background: rgba(116, 1, 1, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sticky-header-menu {
+  font-weight: bold;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: block;
+  width: 50px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.sticky-header-menu:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.sticky-content {
+  padding: 10px 10px 0 10px;
+  overflow-y: auto;
+  width: 250px;
+  min-height: 250px;
+  box-sizing: border-box;
+  border: 0;
+  resize: vertical;
+  background-color: transparent;
+  display: block;
+  cursor: default;
+}
+
+.sticky-content:focus {
+  outline: none;
+}
+
+#createStickyBtn {
+  display: none;
+  font-size: 50px;
+  float: left;
+  cursor: pointer;
+  color: black;
+  padding: 20px;
+}
+
+.dropdown-content-show {
+  top: 30px;
+  left: 0;
+}
+
+.drop-button {
+  margin-left: auto;
+}
+
+.notSaved {
+  display: none;
+}
+
+.notSaved:hover {
+  background-color: transparent;
+  cursor: auto;
+}
+/* this is on the student_settings.php */
+.setting-body {
+  border-radius: 5px;
+  background-color: rgba(8, 8, 8, 0.178);
+  box-shadow: 0 0 5px 2px #ccc;
+}
+
+/* remove card margin from top */
+.card-body{
+  margin: 0;
+  padding: 0;
+  background-color: white;  
+}
+
+/* this is exports buttons */
+.export-buttons{
+  display: flex;
+  gap: 10px;
+  padding: 5px 0;
+}
+@media (max-width: 900px) {
+  section.file-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* end sticky note */
+@media only screen and (max-width: 600px) {
+  .content {
+    width: 100%;
+  }
+  section.file-box {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  @media (max-width: 720px) {
+    .sticky {
+      line-height: 1.2;
+      width: 130px;
+      min-height: 145px;
+      margin: 15px;
+    }
+
+    .sticky-content {
+      width: 130px;
+      min-height: 115px;
+      font-size: 14px;
+    }
+
+    .dropdown-content-hide {
+      width: 130px;
+    }
+
+    .dropdown-content-hide div {
+      padding: 10px 10px;
+    }
+
+    #header {
+      font-size: 12px;
+    }
+
+    .sticky-header-menu {
+      padding: 0 10px 0 0;
+      width: 25px;
+      margin: 0 3px;
+    }
+
+    .drop-button {
+      margin-left: auto;
+    }
+
+    .sticky-header {
+      justify-content: space-around;
+    }
+
+    #header,
+    #navbar,
+    #navbar ul {
+      height: 30px;
+    }
+  }
+  #admin-section {
+    position: relative;
+    border-radius: 10px;
+  }
+  .social-media-profiles {
+    flex-direction: column;
+  }
+
+  .write_a_post_btn {
+    margin-right: 15px;
+  }
+}

@@ -1,0 +1,73 @@
+.mycontent {
+  margin: 10px 0;
+
+  box-shadow: 0 0 2px 3px rgba(202, 198, 198, 0.445);
+  word-wrap: break-word;
+}
+div.mycontent .item .post-title {
+margin: 0;
+   padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+div.mycontent .item .post-body {
+   margin: 0;
+   padding: 0 15px;
+}
+div.mycontent .item .post-content {
+    margin: 0;
+    padding: 15px;
+}
+
+.post-insert {
+  padding: 15px;
+}
+.post-intro p {
+  word-wrap: break-word;
+}
+
+/* drop down */
+
+.drop-box {
+  width: 100px;
+  position: relative;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.submit-drop {
+  background: #fff;
+  position: absolute;
+  right: 0;
+  width: 200px;
+  display: flex;
+}
+ul.dropdown {
+  list-style: none;
+  width: 200px;
+  padding: 15px;
+  border-top: 1px solid #c0b4b4;
+ 
+  display: none;
+}
+
+.dropdown li a {
+  color: #555555;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+a.dropdown-toggle {
+  line-height: 0;
+  color: #555;
+  position: absolute;
+  right: 0;
+  z-index: 110;
+  display: block;
+  font-size: 30px;
+  text-decoration: none;
+}
+.dropdown li a:hover {
+  background: #1560b02d;
+  text-decoration: none;
+}
