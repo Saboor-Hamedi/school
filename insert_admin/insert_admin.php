@@ -1,4 +1,3 @@
-
 <?php include('../config/config.php'); ?>
 <?php include('../database/database.php') ?>
 <?php include('../settings/formats.php') ?>
@@ -57,15 +56,8 @@ $admin_conpass = "";
                 } else {
                     echo 'Data and image not uploaded';
                 }
-                 
-
             }
             
- $db->link->close();
-
+            $db->link->close();
         }
-    
-
-
     }
-
