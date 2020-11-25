@@ -17,14 +17,11 @@ if ($_SESSION['admin_nim'] == null || empty($_SESSION['admin_nim'])) {
 
 <header class="header text-center">
 	<h1 class="blog-name pt-lg-4 mb-0"><a href="homepost.php">Anthony's Blog</a></h1>
-
 	<nav class="navbar navbar-expand-lg navbar-dark">
-
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
 			aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-
 		<div id="navigation" class="collapse navbar-collapse flex-column">
 			<div class="profile-section pt-3 pt-lg-0">
 				<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/profile.png" alt="image">
@@ -46,14 +43,17 @@ if ($_SESSION['admin_nim'] == null || empty($_SESSION['admin_nim'])) {
 
 			<ul class="navbar-nav flex-column text-left">
 				<li class="nav-item">
-					<a class="nav-link" href="homepost.php"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
-							class="sr-only">(current)</span></a>
+					<a class="nav-link" href="blog-post.php"><i class="fas fa-bookmark fa-fw mr-2"></i>Posts</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="blog-post.php"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					<a class="nav-link" href="homepost.php"><i class="fas fa-home fa-fw mr-2"></i>Home</a>
 				</li>
 				<li class="nav-item active">
 					<a class="nav-link" href="about.php"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="../student/student_account.php"><i
+							class="fas fa-long-arrow-alt-left mr-2"></i>Go Back</a>
 				</li>
 			</ul>
 

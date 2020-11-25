@@ -20,13 +20,14 @@ body {
 
 /* row */
 .row{
-  background-color: #3fa1a9;
+  background-color: #df0ddf;
 }
+
 /* main */
 .main{
   background: #3fa1a9;
-  padding: 0;
-  margin: 0;
+  padding: 0 !important;
+   margin: 0 !important;
 }
 .content{
  padding: 10px;
@@ -132,15 +133,16 @@ img {
   text-align: center;
 }
 .card-header {
-   background-color: rgba(228, 28, 28, 0.199);
+  background-color: rgba(224, 0, 86, 0.39);
   display: flex;
   justify-content: space-between;
-  padding: 10px;
+  padding: 5px;
 }
 .card-header h5 {
   color: white;
-  font-size: 1.5rem;
+  font-size: 18px;
 }
+
 img {
   max-width: 100%;
 }
@@ -258,6 +260,7 @@ textarea {
   margin-bottom: 10px;
   background-color: #ffffff;
   box-shadow: 0 0 5px 2px #ccc;
+
 }
 
 /* the body details */

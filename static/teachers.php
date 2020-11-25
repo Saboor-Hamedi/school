@@ -4,10 +4,11 @@
 <?php session_start(); ?>
 <?php
 $id;
-if ( $_SESSION['admin_nim'] === NULL) {
+if ($_SESSION['admin_nim'] === null) {
     header('Location: /index.php');
 } else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
+<?php  $PageTitle = "Teachers";?>
 <?php include('../inc/header.php'); ?>
 <div class="wrapper">
     <nav id="sidebar" class="sidebar">
@@ -18,25 +19,31 @@ if ( $_SESSION['admin_nim'] === NULL) {
                     <hr />
                 </i>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="index.php"> <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span> </a>
+                    <a class="sidebar-link" href="index.php"> <i class="align-middle" data-feather="sliders"></i> <span
+                            class="align-middle">Dashboard</span> </a>
                 </li>
 
                 <li class="sidebar-item active">
-                    <a class="sidebar-link" href="teachers.php"> <i class="align-middle" data-feather="user"></i> <span class="align-middle">Teachers</span> </a>
+                    <a class="sidebar-link" href="teachers.php"> <i class="align-middle" data-feather="user"></i> <span
+                            class="align-middle">Teachers</span> </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span class="align-middle">Students</span> </a>
+                    <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span
+                            class="align-middle">Students</span> </a>
                 </li>
 
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="classes.php"> <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Schedule</span> </a>
+                    <a class="sidebar-link" href="classes.php"> <i class="align-middle" data-feather="credit-card"></i>
+                        <span class="align-middle">Schedule</span> </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span class="align-middle">Send Files</span> </a>
+                    <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span
+                            class="align-middle">Send Files</span> </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="admin_user.php"> <i class="align-middle" data-feather="book"></i> <span class="align-middle">Admin User</span> </a>
+                    <a class="sidebar-link" href="admin_user.php"> <i class="align-middle" data-feather="book"></i>
+                        <span class="align-middle">Admin User</span> </a>
                 </li>
             </ul>
         </div>
@@ -46,13 +53,15 @@ if ( $_SESSION['admin_nim'] === NULL) {
             <a class="sidebar-toggle d-flex"> <i class="hamburger align-self-center"></i> </a>
             <!-- this is the search input, where you search for a student on the table -->
             <div>
-                <input type="text" id="teacher_search" name="teacher_search" class="form-control" placeholder="Quick find here..." />
+                <input type="text" id="teacher_search" name="teacher_search" class="form-control"
+                    placeholder="Quick find here..." />
             </div>
             <!-- end search  -->
             <div class="navbar-collapse collapse">
                 <ul class="navbar-nav navbar-align">
                     <li class="nav-item dropdown">
-                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown"> <i class="align-middle" data-feather="settings"></i> </a>
+                        <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-toggle="dropdown"> <i
+                                class="align-middle" data-feather="settings"></i> </a>
                         <!-- fetch adming profile
                                 this is in every file, because we wnated to display 
                                 the admin name, and profile on the header
@@ -60,9 +69,11 @@ if ( $_SESSION['admin_nim'] === NULL) {
                             -->
                         <?php
                             $query_image = "SELECT * FROM login WHERE admin_nim = '$id' ";
-                            $query_image_row = $db->select($query_image); if ($query_image_row) { while ($row_image = $query_image_row->fetch_assoc()) { ?>
+                            $query_image_row = $db->select($query_image); if ($query_image_row) {
+                                while ($row_image = $query_image_row->fetch_assoc()) { ?>
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
-                            <img src="../images/<?php echo $row_image['admin_image']; ?>" class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
+                            <img src="../images/<?php echo $row_image['admin_image']; ?>"
+                                class="avatar img-fluid rounded mr-1" alt="Charles Hall" />
                             <span class="text-dark"><?php echo $row_image['admin_name']; ?></span>
                         </a>
                         <?php   }
@@ -76,10 +87,13 @@ if ( $_SESSION['admin_nim'] === NULL) {
                                     ?>
                                 <!-- this is the id  -->
                             </a>
-                            <a class="dropdown-item" href="#"> <i class="align-middle mr-1" data-feather="pie-chart"></i> Analytics </a>
+                            <a class="dropdown-item" href="#"> <i class="align-middle mr-1"
+                                    data-feather="pie-chart"></i> Analytics </a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="students.php"> <i class="align-middle mr-1" data-feather="settings"></i> Settings & Privacy </a>
-                            <a class="dropdown-item" href="#"> <i class="align-middle mr-1" data-feather="help-circle"></i> Help Center </a>
+                            <a class="dropdown-item" href="students.php"> <i class="align-middle mr-1"
+                                    data-feather="settings"></i> Settings & Privacy </a>
+                            <a class="dropdown-item" href="#"> <i class="align-middle mr-1"
+                                    data-feather="help-circle"></i> Help Center </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="../logout/logout.php">Log out</a>
                         </div>
@@ -98,10 +112,11 @@ if ( $_SESSION['admin_nim'] === NULL) {
                 <div class="col-12 col-sm ">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
-                            <h5 >Teachers Data</h5>
+                            <h5>Teachers Data</h5>
                         </div>
                         <div class="export-buttons">
-                            <button type="button" id="TeacherExport" class="btn btn-primary"><i class="fas fa-file-csv"> CSV</i></button>
+                            <button type="button" id="TeacherExport" class="btn btn-primary"><i class="fas fa-file-csv">
+                                    CSV</i></button>
 
                             <form action="../pdf/generate_pdf.php" method="POST" target="_blank">
                                 <button type="submit" name="TeacherExportpdf" class="btn btn-primary">
@@ -127,14 +142,20 @@ if ( $_SESSION['admin_nim'] === NULL) {
                                 </thead>
                                 <?php
                                             $query = "SELECT * FROM teacher GROUP BY teacherid ORDER BY tec_id";
-                                            $query_rearch = $db->select($query); $count_row = mysqli_num_rows($query_rearch); if ($count_row <= 0) { echo '
+                                            $query_rearch = $db->select($query); $count_row = mysqli_num_rows($query_rearch); if ($count_row <= 0) {
+                                                echo '
                                 <div class="alert alert-primary" role="alert">
                                     No data found
                                 </div>
-                                '; } else { if ($count_row > 0) { while ($row = $query_rearch->fetch_assoc()) { ?>
+                                ';
+                                            } else {
+                                                if ($count_row > 0) {
+                                                    while ($row = $query_rearch->fetch_assoc()) { ?>
                                 <tbody>
-                                    <tr id="tr_<?php echo $row['tec_id']; ?>">
-                                        <td><?php echo $fm->increment(); ?></td>
+                                    <tr
+                                        id="tr_<?php echo $row['tec_id']; ?>">
+                                        <td><?php echo $fm->increment(); ?>
+                                        </td>
                                         <td>
                                             <?php echo $row['teacherid']; ?>
                                         </td>
@@ -154,12 +175,18 @@ if ( $_SESSION['admin_nim'] === NULL) {
                                             <?php echo $row['profession']; ?>
                                         </td>
                                         <td>
-                                            <a id="<?php echo $row['tec_id']; ?>" class="teacher_view" data-toggle="modal" data-target="#teacher_update_modal"> <i class="far fa-edit"></i> </a>
+                                            <a id="<?php echo $row['tec_id']; ?>"
+                                                class="teacher_view" data-toggle="modal"
+                                                data-target="#teacher_update_modal"> <i class="far fa-edit"></i> </a>
                                         </td>
-                                        <td><i class="fas fa-trash-alt" id="teacher_delete_btn" onclick="delete_teacher('<?php echo $row['tec_id'] ?>')"></i></td>
+                                        <td><i class="fas fa-trash-alt" id="teacher_delete_btn"
+                                                onclick="delete_teacher('<?php echo $row['tec_id'] ?>')"></i>
+                                        </td>
                                     </tr>
                                 </tbody>
-                                <?php }}} ?>
+                                <?php }
+                                                }
+                                            } ?>
                             </table>
                         </div>
                     </div>
@@ -172,17 +199,31 @@ if ( $_SESSION['admin_nim'] === NULL) {
                         </div>
                         <form id="teacher_insert_form" method="POST">
                             <div class="form-box">
-                                <input type="text" class="form-control" id="insert_teacher_id_input" name="insert_teacher_id_input" placeholder="Enter Teacher ID" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_name_input" name="insert_teacher_name_input" placeholder="Enter Teacher Name" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_lastname_input" name="insert_teacher_lastname_input" placeholder="Enter Teacher Last Name" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_address_input" name="insert_teacher_address_input" placeholder="Enter Teacher Adderss" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_country_input" name="insert_teacher_country_input" placeholder="Enter Teacher Country" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_professions_input" name="insert_teacher_professions_input" placeholder="Enter Teacher Profession" autocomplete="off" />
-                                <input type="text" class="form-control" id="insert_teacher_pass_input" name="insert_teacher_pass_input" placeholder="Enter Teacher Password" autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_id_input"
+                                    name="insert_teacher_id_input" placeholder="Enter Teacher ID" autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_name_input"
+                                    name="insert_teacher_name_input" placeholder="Enter Teacher Name"
+                                    autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_lastname_input"
+                                    name="insert_teacher_lastname_input" placeholder="Enter Teacher Last Name"
+                                    autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_address_input"
+                                    name="insert_teacher_address_input" placeholder="Enter Teacher Adderss"
+                                    autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_country_input"
+                                    name="insert_teacher_country_input" placeholder="Enter Teacher Country"
+                                    autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_professions_input"
+                                    name="insert_teacher_professions_input" placeholder="Enter Teacher Profession"
+                                    autocomplete="off" />
+                                <input type="text" class="form-control" id="insert_teacher_pass_input"
+                                    name="insert_teacher_pass_input" placeholder="Enter Teacher Password"
+                                    autocomplete="off" />
                             </div>
                         </form>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="insert_teacher_btn" name="insert_teacher_btn">Submit</button>
+                            <button type="button" class="btn btn-primary" id="insert_teacher_btn"
+                                name="insert_teacher_btn">Submit</button>
                         </div>
                     </div>
                     <!-- end  -->
@@ -204,4 +245,4 @@ if ( $_SESSION['admin_nim'] === NULL) {
     document.getElementById("insert_teacher_id_input").value = RandomID();
 </script>
 <?php include('../inc/footer.php'); ?>
-<?php } ?>
+<?php }

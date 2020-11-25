@@ -37,12 +37,13 @@
             </div>
             <!--//profile-section-->
             <ul class="navbar-nav flex-column text-left">
-                <li class="nav-item">
-                    <a class="nav-link" href="homepost.php"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
-                            class="sr-only">(current)</span></a>
+                <li class="nav-item active ">
+                    <a class="nav-link" href="blog-post.php"><i class="fas fa-bookmark fa-fw mr-2"></i>Posts</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="blog-post.php"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+                <li class="nav-item ">
+                    <a class="nav-link" href="homepost.php">
+                        <i class="fas fa-home fa-fw mr-2"></i>Home
+                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about.php"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
@@ -96,21 +97,30 @@
                         </h3>
                         <!-- drop down -->
                         <?php if ($row['nim'] === $id) { ?>
-                        <nav class="drop-box">
+                        <div class="drop-box">
+
                             <div class="submit-drop">
-                                <a class="dropdown-toggle"></a>
+                                <a class="toggle-dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                 <ul class="dropdown">
-                                    <li><a
+                                    <li>
+                                        <a
                                             onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
                                     </li>
-                                    <li><a id="<?php echo $row['id']; ?>"
+                                    <li>
+                                        <a id="<?php echo $row['id']; ?>"
                                             name="edit_post_btn" class="edit_post_btn" data-toggle="modal"
-                                            data-target="#post_modal_update">Edit</a></li>
-                                    <li><a href="">Tutorial</a></li>
-                                    <li><a href="">UI Kits</a></li>
+                                            data-target="#post_modal_update">Edit</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tutorial</a>
+                                    </li>
+                                    <li>
+                                        <a href="">UI Kits</a>
+                                    </li>
                                 </ul>
                             </div>
-                        </nav>
+                        </div>
+
                         <!-- end -->
                         <?php }  ?>
                     </div>
@@ -123,7 +133,7 @@
                     <div class="post-content">
                         <p>
                             <?php echo($row['content']);?>
-                            <a class="more-link" href="">Read more &rarr;</a>
+                            <br>
                         </p>
                     </div>
 

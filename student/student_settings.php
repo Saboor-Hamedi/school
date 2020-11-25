@@ -8,6 +8,7 @@ if ($_SESSION['admin_nim'] == null) {
     header('Location: /index.php');
 } else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
+<?php  $PageTitle = "Setings";?>
 <?php include('../inc/header.php'); ?>
 <div class="wrapper">
 	<nav id="sidebar" class="sidebar">
@@ -76,7 +77,7 @@ if ($_SESSION['admin_nim'] == null) {
 					<div class="card-header">
 						<h5 class="card-title mb-0">Admin Table</h5>
 					</div>
-					<div class="row">
+					<div class="conten">
 						<div class="col">
 							<!-- column -->
 						</div>

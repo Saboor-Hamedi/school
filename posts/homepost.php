@@ -38,11 +38,14 @@
 			</div>
 			<!--//profile-section-->
 			<ul class="navbar-nav flex-column text-left">
-				<li class="nav-item active">
-					<a class="nav-link" href="homepost.php"><i class="fas fa-home fa-fw mr-2"></i>Blog Home </a>
+				<li class="nav-item ">
+					<a class="nav-link" href="blog-post.php">
+						<i class="fas fa-bookmark fa-fw mr-2"></i>Posts</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="blog-post.php"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+				<li class="nav-item  active">
+					<a class="nav-link" href="homepost.php">
+						<i class="fas fa-home fa-fw mr-2"></i>Home
+					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="about.php"><i class="fas fa-user fa-fw mr-2"></i>About Me</a>
@@ -93,18 +96,23 @@
 				<div class="item">
 
 					<div class="post-title">
-						<h3><?php echo $row['title']; ?></h3>
-					  <nav class="drop-box">
+						<h3><?php echo $row['title']; ?>
+						</h3>
+						<nav class="drop-box">
 							<div class="submit-drop">
-							<a class="dropdown-toggle" ></a>
-							<ul class="dropdown">
-							<li><a  id="P" onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a></li>
-							<li><a  id="<?php echo $row['id']; ?>"class="edit_post_btn_home" data-toggle="modal"	data-target="#update_home_modal">Edit</a></li>
-							<li><a href="">Tutorial</a></li>
-							<li><a href="">UI Kits</a></li>
-						</ul>
-						</div>
-					</nav>
+
+								<ul class="dropdown">
+									<li><a id="P"
+											onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
+									</li>
+									<li><a id="<?php echo $row['id']; ?>"
+											class="edit_post_btn_home" data-toggle="modal"
+											data-target="#update_home_modal">Edit</a></li>
+									<li><a href="">Tutorial</a></li>
+									<li><a href="">UI Kits</a></li>
+								</ul>
+							</div>
+						</nav>
 					</div>
 					<!-- drop down -->
 
@@ -129,4 +137,3 @@
 	<?php include('footer/footer.php'); ?>
 	<?php } ?>
 </div>
-
