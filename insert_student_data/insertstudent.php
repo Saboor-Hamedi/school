@@ -23,9 +23,11 @@ if (!empty($_POST)) {
     $insert_student_country_input = $fm->ToUpperCase(mysqli_real_escape_string($db->link, $_POST['insert_student_country_input']));
     $insert_student_pass_input = mysqli_real_escape_string($db->link, $_POST['insert_student_pass_input']);
     $insert_student_conpass_input = mysqli_real_escape_string($db->link, $_POST['insert_student_conpass_input']);
+
+    $insert_student_pass_input = password_hash($_POST['insert_student_pass_input'], PASSWORD_BCRYPT);
+    $insert_student_conpass_input = password_hash($_POST['insert_student_conpass_input'], PASSWORD_BCRYPT);
     $duplicate = "SELECT  * FROM student WHERE nim = '$insert_student_id_input'";
     $check_dup = mysqli_query($db->link, $duplicate);
-   
     if (mysqli_num_rows($check_dup) > 0) {
         echo 'This ID is already exists';
     } else {
@@ -47,12 +49,9 @@ if (!empty($_POST)) {
                     $.LoadingOverlay("show");
                     setTimeout(function(){
                     window.location.reload();
-                    // Show full page LoadingOverlay
                     $.LoadingOverlay("hide");
-
                     },3000);
                 </script>
-               
                ';
         } else {
             echo 'Data not inserted';

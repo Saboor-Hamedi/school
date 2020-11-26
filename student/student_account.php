@@ -126,7 +126,6 @@ if ($_SESSION['admin_nim'] == null) {
                         <?php } ?>
                         <!-- twitter -->
                         <?php if ($row['twitter'] == "") { ?>
-
                         <?php } else { ?>
                         <span>
                             <a href="<?php echo $row['twitter']; ?>"
