@@ -4,9 +4,9 @@ this is the main page, index.php
 <?php session_start(); ?>
 <?php
 $id = "";
-if ($_SESSION['admin_nim'] == null) {
-    header('Location: /index.php');
-} else { ?>
+if ((!isset($_SESSION['user_id']))) {
+      header('location: /index.php');  
+}else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
 <?php  $PageTitle = "Send file";?>
 <?php include('../inc/header.php'); ?>
@@ -30,6 +30,14 @@ if ($_SESSION['admin_nim'] == null) {
                         </span>
                     </a>
                 </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="">
+                        <i class="align-middle" data-feather="user"></i>
+                        <span class="align-middle">
+                            Input Student' family
+                        </span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span
                             class="align-middle">Students</span> </a>
@@ -41,12 +49,12 @@ if ($_SESSION['admin_nim'] == null) {
 
                 <li class="sidebar-item active">
                     <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span
-                            class="align-middle">Send File</span> </a>
+                            class="align-middle">Share File</span> </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="admin_user.php">
                         <i class="align-middle" data-feather="book"></i>
-                        <span class="align-middle">Admin User</span>
+                        <span class="align-middle">Crate New Admin</span>
                     </a>
                 </li>
             </ul>

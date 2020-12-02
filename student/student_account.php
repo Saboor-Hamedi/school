@@ -147,15 +147,16 @@ if ($_SESSION['admin_nim'] == null) {
                 } ?>
             </sectoin>
 
-            <div class="custom-bread">
-                <nav aria-label="breadcrumb">
-                    <!-- error here -->
-                    <!-- <div class="alert alert-primary  " role="alert" id="insert_message_classes"></div> -->
-                </nav>
-            </div>
+
             <section class="details">
-                <div class="col-12 col-md-12 col-xxl-12 d-flex order-3 order-xxl-2">
-                    <div class="card flex-fill w-100">
+                <div class="custom-bread">
+                    <nav aria-label="breadcrumb">
+                        <!-- error here -->
+                        <!-- <div class="alert alert-primary  " role="alert" id="insert_message_classes"></div> -->
+                    </nav>
+                </div>
+                <div class="col-12">
+                    <div class=" ">
                         <div class="card-header">
                             <h5 class="card-title mb-0">Your classes</h5>
                         </div>
@@ -180,7 +181,7 @@ if ($_SESSION['admin_nim'] == null) {
                                 <?php if ($year != ($result['class_grade'] . ' Grade ' . $result['class_grade'])) { ?>
                                 <table class="table table-dark">
                                     <div class="grades">
-                                        <h3><?php echo $result['class_grade']; ?>
+                                        <h3><?php echo $result['class_grade']. 'th'. ' Grade'; ?>
                                         </h3>
                                     </div>
                                     <thead>
@@ -198,7 +199,7 @@ if ($_SESSION['admin_nim'] == null) {
                                     <?php
                                         } ?>
                                     <tbody>
-                                        <tr bgcolor="gray">
+                                        <tr>
                                             <td><?php echo $fm->increment(); ?>
                                             </td>
                                             <td>
@@ -231,34 +232,38 @@ if ($_SESSION['admin_nim'] == null) {
                 </div>
             </section>
             <!-- files -->
-            <section class="file-box card">
-                <?php
-                $query = "SELECT * FROM student INNER JOIN files ON student.nim = files.nim WHERE student.nim = '$id'  ";
-                $select_rows = $db->select($query); if ($select_rows) {
-                    while ($file_row = $select_rows->fetch_assoc()) { ?>
-                <div class="student-box-body">
-                    <div class="title">
-                        <?php echo  $file_row['file_title']; ?>
-                        <h4>
-                            <a href="javascript:void(0)"><i class="fas fa-trash"></i></a>
-                        </h4>
-                    </div>
-                    <div class="attachement">
-                        <a href="../upload_files/<?php echo $file_row['file_attachment']; ?>"
-                            target="__blank"><?php echo $file_row['file_attachment']; ?></a>
-                    </div>
+            <section class="file-box">
+        <div class="alert alert-primary" id="delete_student_file_message" role="alert"></div>
+                <div class="file-grid">
+                <?php 
+                    $query = "SELECT * FROM student INNER JOIN files ON student.nim = files.nim WHERE student.nim = '$id'  GROUP BY file_attachment";
+                    $file_found =$db->select($query);
+                    while($row = $file_found->fetch_assoc()){?>
+                        <nav class="file-panel">
+                            <div class="file_title">
+                                <span><?php echo $row['file_title']; ?></span>
+                                 <span>  <a onclick="delete_student_file('<?php echo $row['file_id'] ?>')"><i class="fas fa-trash"></i></a></span>
+                            </div>
 
-                    <div class="description">
-                        <p><?php echo $file_row['file_description']; ?>
-                        </p>
-                    </div>
-
-                    <div class="file-date">
-                        <?php echo $file_row['send_date']; ?>
-                    </div>
-                </div>
-                <?php }
-                } ?>
+                        <div class="file-attachement">
+                                <a href="../upload_files/<?php echo $row['file_attachment']; ?>"
+                                         target="__blank"><?php echo $row['file_attachment']; ?>
+                               </a>
+                            </div>
+                              <div class="file-description">
+                              <p>
+                                <?php echo $row['file_description']; ?>
+                              </p>
+                            </div>
+                             <div class="file-date">
+                               <span> <?php echo $row['send_date']; ?></span>
+                            </div> 
+                        </nav>
+                        
+                    <?php } ?>       
+   
+           </div>
+       
             </section>
 
             <!-- notes -->

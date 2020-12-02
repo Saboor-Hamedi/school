@@ -65,7 +65,8 @@
         <div class="container">
             <div class="mycontent">
                 <!-- make new post -->
-                <div class="post-insert">
+                <section id="post-card">
+                    <div class="post-insert">
                     <div class="postitle">
                         <h4 class="text-center">Create post</h4>
                     </div>
@@ -83,6 +84,7 @@
                     <button type="button" class="btn btn-primary" id="insert_post_btn"
                         name="insert_post_btn">Insert</button>
                 </div>
+                </section>
                 <!-- end make new post -->
             </div>
 
@@ -103,8 +105,7 @@
                                 <a class="toggle-dropdown"><i class="fas fa-ellipsis-h"></i></a>
                                 <ul class="dropdown">
                                     <li>
-                                        <a
-                                            onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
+                                        <a                                            onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
                                     </li>
                                     <li>
                                         <a id="<?php echo $row['id']; ?>"

@@ -6,7 +6,7 @@
 $id = $_POST['id'];
     $dl = "DELETE FROM teacher WHERE tec_id = '$id' ";
     $result  = $db->delete($dl);
-     $db->link->close();
+     $db->closeConnection();
 
  
 

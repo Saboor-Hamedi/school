@@ -1,3 +1,4 @@
+<!-- this file will update the last online on the database -->
 <?php include('../config/config.php'); ?>
 <?php include('../database/database.php') ?>
 <?php

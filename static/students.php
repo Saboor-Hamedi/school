@@ -4,11 +4,10 @@
 <?php session_start(); ?>
 <?php
    $id;
-   if ($_SESSION['admin_nim'] === null) {
-       header('Location: /index.php');
-   } else { ?>
+if ((!isset($_SESSION['user_id']))) {
+      header('location: /index.php');  
+}else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
-<!-- excel -->
 <?php  $PageTitle = "Student";?>
 <?php include('../inc/header.php'); ?>
 <div class="wrapper">
@@ -23,13 +22,22 @@
                     <a class="sidebar-link" href="index.php"> <i class="align-middle" data-feather="sliders"></i> <span
                             class="align-middle">Dashboard</span> </a>
                 </li>
+                  <li class="sidebar-item active">
+                    <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span
+                            class="align-middle">Students</span> </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="teachers.php"> <i class="align-middle" data-feather="user"></i> <span
                             class="align-middle">Teachers</span> </a>
                 </li>
-                <li class="sidebar-item active">
-                    <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span
-                            class="align-middle">Students</span> </a>
+              
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="">
+                        <i class="align-middle" data-feather="user"></i>
+                        <span class="align-middle">
+                            Input Student' family
+                        </span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="classes.php"> <i class="align-middle" data-feather="credit-card"></i>
@@ -38,11 +46,11 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span
-                            class="align-middle">Send Files</span> </a>
+                            class="align-middle">Share File</span> </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="admin_user.php"> <i class="align-middle" data-feather="book"></i>
-                        <span class="align-middle">Admin User</span> </a>
+                        <span class="align-middle">Crate New Admin</span> </a>
                 </li>
             </ul>
         </div>
@@ -106,7 +114,7 @@
                 </nav>
             </div>
             <div class="row">
-                <div class="col-12 col-md-12 col-xxl-9 d-flex order-3 order-xxl-2">
+                <div class="col-12 col-md-12 col-xxl-9" id="row-gap">
                     <div class="card flex-fill w-100">
                         <div class="card-header">
                             <h5 class="mb-0">Students Data</h5>
@@ -154,9 +162,10 @@
                                         <tr>
                                             <td><?php echo $fm->increment(); ?>
                                             </td>
-                                            <td>
-                                                <?php echo $row['nim']; ?>
+                                            <td class="link">
+                                                <a href="../visit/visit-student-account.php?id=<?php echo $row['nim']; ?>" target="__blank"><?php echo $row['nim']; ?></a>
                                             </td>
+                                            
                                             <td>
                                                 <?php echo $row['name']; ?>
                                             </td>

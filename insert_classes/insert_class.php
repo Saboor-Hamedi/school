@@ -59,6 +59,7 @@ if(!empty($_POST)){
         echo 'Caught exception: ',  $e->getMessage(), "\n";
 
     }
- $db->link->close();
+    $db->closeConnection();
+
 
 }

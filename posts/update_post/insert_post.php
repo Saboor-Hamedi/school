@@ -36,5 +36,6 @@ if (!empty($_POST)) {
     } else {
         echo 'Data not inserted';
     }
-    $db->link->close();
+    $db->closeConnection();
+
 }

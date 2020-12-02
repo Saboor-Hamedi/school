@@ -47,4 +47,4 @@ if ($update_row) {
 } else {
     echo 'Data not updated';
 }
-    $db->link->close();
+    $db->closeConnection();

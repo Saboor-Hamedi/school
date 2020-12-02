@@ -58,6 +58,7 @@ $admin_conpass = "";
                 }
             }
             
-            $db->link->close();
+               $db->closeConnection();
+
         }
     }

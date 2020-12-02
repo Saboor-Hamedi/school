@@ -57,6 +57,9 @@ Class Database{
 	}
   }
 
+  function closeConnection(){
+	  return $this->link->close();
+  }
  
  
 }

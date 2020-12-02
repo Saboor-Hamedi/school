@@ -1,13 +1,9 @@
-<!--
-   this is the main page, index.php
-   -->
-
 <?php session_start(); ?>
 <?php
-   $id = "";
-   if ($_SESSION['admin_nim'] === null) {
-       header('Location: /index.php');
-   } else { ?>
+$id = "";
+if ((!isset($_SESSION['user_id']))) {
+      header('location: /index.php');  
+}else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
 <?php  $PageTitle = "Home";?>
 <?php include('../inc/header.php'); ?>
@@ -23,6 +19,12 @@
                     <a class="sidebar-link" href="index.php"> <i class="align-middle" data-feather="sliders"></i> <span
                             class="align-middle">Dashboard</span> </a>
                 </li>
+                
+                <li class="sidebar-item">
+                    <a class="sidebar-link" href="students.php">
+                     <i class="align-middle" data-feather="user"></i> 
+                     <span class="align-middle">Students</span> </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="teachers.php">
                         <i class="align-middle" data-feather="user"></i>
@@ -31,9 +33,14 @@
                         </span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link" href="students.php"> <i class="align-middle" data-feather="user"></i> <span
-                            class="align-middle">Students</span> </a>
+
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="">
+                        <i class="align-middle" data-feather="user"></i>
+                        <span class="align-middle">
+                            Input Student' family
+                        </span>
+                    </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="classes.php"> <i class="align-middle" data-feather="credit-card"></i>
@@ -42,11 +49,11 @@
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span
-                            class="align-middle">Send File</span> </a>
+                            class="align-middle">Share File</span> </a>
                 </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="admin_user.php"> <i class="align-middle" data-feather="book"></i>
-                        <span class="align-middle">Admin User</span> </a>
+                        <span class="align-middle">Create New Admin</span> </a>
                 </li>
 
             </ul>
@@ -98,7 +105,7 @@
                 </nav>
             </div>
             <div class="row">
-                <div class="col-12 col-md-12 col-xxl-3 order-1 order-xxl-3">
+                <div class="col-12 col-md-12 col-xxl-3" id="row-gap">
                     <div class="card flex-fill w-100">
                         <!-- change password  -->
                         <div class="card-header">
@@ -185,4 +192,6 @@
     </div>
 </div>
 <?php include('../inc/footer.php'); ?>
-<?php }
+
+
+<?php }?>

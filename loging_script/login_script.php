@@ -51,7 +51,8 @@ class LoginCard
                     } else {
                         $_SESSION['admin_nim'] = $row['admin_nim'];
                         $_SESSION['amdin_pass'] = $row['admin_pass'];
-                      
+                        $_SESSION['user_id'] = false;
+
                         include_once('./settings/lastonline.php');
                         AdminLastLoggedin($admin_nim);
                         header("Location: ../static/index.php");
@@ -76,9 +77,9 @@ class LoginCard
                         if (!$s_hash) {
                             echo  $this->setError("Wrong password Or ID");
                         } else {
-                            $user_id=  $_SESSION['admin_nim'] = $s_row['nim'];
+                            $_SESSION['admin_nim'] = $s_row['nim'];
                             $_SESSION['amdin_pass'] = $s_row['password'];
-                            $_SESSION['user_id']= true;
+                            $_SESSION['user_id'] = true;
                             // update query time
                             include_once('./settings/lastonline.php');
                             StudentLastOnLline($admin_nim);
@@ -86,9 +87,7 @@ class LoginCard
                             exit();
                         }
                     }
-                }
-            } else {
-                echo  $this->setError("Password or ID is wrong");
+                } 
             }
         }
     }

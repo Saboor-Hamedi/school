@@ -8,7 +8,7 @@
     $dl = "DELETE FROM post WHERE id = '$id' ";
   $result  = $db->delete($dl);
   
-    $db->link->close();
+    $db->closeConnection();
 
      
 

@@ -53,6 +53,6 @@
                 echo 'Data not inserted';
             }
         }
-         $db->link->close();
+            $db->closeConnection();
 
     }

@@ -20,17 +20,25 @@ body {
 
 /* row */
 .row{
-  background-color: #df0ddf;
+  padding: 10px;
+  box-shadow: 0 0 5px 3px white;
 }
-
+.card {
+  display: flex;
+  justify-content: center;
+  background-color: transparent;
+  box-shadow: 0 0 5px 3px white;
+}
+#row-gap{
+  padding: 0;
+}
 /* main */
 .main{
-  background: #3fa1a9;
-  padding: 0 !important;
-   margin: 0 !important;
+  background: #fffdff;
+
 }
 .content{
- padding: 10px;
+  margin: 0;
 
 }
 /* unset bs3 setting */
@@ -55,7 +63,10 @@ body {
 }
 .table-cotent{
   width: 100%;
- 
+}
+.link a{
+  color: white;
+  text-decoration: underline;
 }
 
 .grades{
@@ -114,13 +125,8 @@ thead, tbody, tr, th, td{
 .modal-header h5 {
   color: white;
 }
-/* file */
-.card {
-  display: flex;
-  justify-content: center;
-  padding: 5px;
-  
-}
+
+
 
 img {
   width: auto;
@@ -155,6 +161,20 @@ img {
   justify-content: center;
   align-items: center;
 }
+
+/* filechooser */
+#row_admin{
+  margin: 0 auto;
+ width: 400px;
+  padding: 10px;
+}
+#datetimepicker-dashboard{
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px;
+
+}
+
 .admin-content-file {
   background-color: white;
   position: relative;
@@ -162,7 +182,6 @@ img {
 .preview {
   height: 200px;
   overflow: auto;
-
   margin-bottom: 10px;
 }
 .admin-content-file label {
@@ -177,11 +196,9 @@ img {
   align-items: center;
   color: white;
 }
-
 .admin-content-file input[type="file"] {
   display: none;
 }
-
 .inputs input {
   padding: 10px;
   margin-bottom: 10px;
@@ -203,16 +220,8 @@ textarea {
   width: 100%;
   display: none;
 }
-.submit_bnt_admin button {
-  background-color: white;
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: #3fa1a9;
-  color: white;
-  cursor: pointer;
-  outline: none;
-}
+
+
 /* this is for drop down on the class file */
 .insert_class_search_div {
   display: block;
@@ -253,6 +262,7 @@ textarea {
   display: block;
   text-align: center;
 }
+
 
 /* student area */
 .student-bio-details {
@@ -310,48 +320,67 @@ p {
 .student-footer-profile {
   padding: 10px;
 }
+section.details{
+background-color: hsl(0, 100%, 100%);
+padding: 10px;
+border-radius: 5px;
+box-shadow: 0 0 2px 3px #ccc;
+}
 /* student files */
-section.file-box {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 1.6rem;
-}
-section.file-box .student-box-body {
-  position: relative;
-  background-color: hsl(0, 100%, 100%);
-  border-radius: 5px;
-  text-align: center;
-  box-shadow: 0 0 2px 3px #ccc;
-}
-section.file-box .student-box-body .title {
-  background-color: rgba(228, 28, 28, 0.199);
+section.file-box{
+  width: 100%;
   padding: 10px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 2px 3px rgb(231, 221, 221);
+  border-radius: 5px;
+ 
+}
+.file-panel{
+  max-width: 100%;
+ background-color: hsl(0, 100%, 100%);
+
+box-shadow: 0 0 2px 3px #ccc;
+}
+.file-grid{
+ display: grid;
+   grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+   gap: 10px;
+}
+.file_title{
   display: flex;
   justify-content: space-between;
-  align-items: center;
-}
-section.file-box .student-box-body .title h4 i {
-  color: red;
-}
-.section.file-box .student-box-body .attachement {
-  margin-top: 2rem;
-}
-section.file-box .student-box-body .description {
   padding: 10px;
-  margin-bottom: 10px;
+  background-color: #888;
 
-  height: auto;
-  width: 100%;
+}
+.file_title i{
+  color: red;
+  cursor: pointer;
+}
+.file-attachement
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.file-attachement a{
+  text-decoration: none;
+  font-size: 16px;
+ 
+}
+.file-description{
+  padding: 10px;
+}
+.file-date{
+  background-color: #888;
+  padding: 2px;
   
 }
-section.file-box .student-box-body .file-date {
-  position: absolute;
-  bottom: 0;
-  padding: 5px;
-  font-size: 14px;
-  background-color: rgba(228, 28, 28, 0.199);
-  width: 100%;
+.file-date span{
+  margin-left: 5px;
 }
 /* end */
 
@@ -379,8 +408,6 @@ input:focus {
   box-shadow: 0 0 5px 2px #ccc;
   height: 500px;
   overflow: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
 }
 
 .sticky {
@@ -392,7 +419,7 @@ input:focus {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   width: 250px;
   min-height: 250px;
-  margin: 10px 10px;
+  margin: 10px ;
   transition: 0.3s;
   float: left;
   display: none;
@@ -537,9 +564,11 @@ input:focus {
   padding: 5px 0;
 }
 @media (max-width: 900px) {
-  section.file-box {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.file-grid{
+  
+  grid-template-columns: repeat(2,1fr);
+ 
+}
 }
 
 /* end sticky note */
@@ -547,9 +576,11 @@ input:focus {
   .content {
     width: 100%;
   }
-  section.file-box {
-    grid-template-columns: repeat(1, 1fr);
-  }
+ .file-grid{
+  
+  grid-template-columns: repeat(1,1fr);
+ 
+}
   @media (max-width: 720px) {
     .sticky {
       line-height: 1.2;

@@ -1,9 +1,9 @@
 <?php session_start(); ?>
 <?php
 $id;
-if ($_SESSION['admin_nim'] == null) {
-    header('Location: /index.php');
-} else { ?>
+if ((!isset($_SESSION['user_id']))) {
+      header('location: /index.php');  
+}else { ?>
 <?php $id = $_SESSION['admin_nim']; ?>
 <?php  $PageTitle = "New User";?>
 <?php include('../inc/header.php'); ?>
@@ -23,6 +23,14 @@ if ($_SESSION['admin_nim'] == null) {
                     <a class="sidebar-link" href="teachers.php"> <i class="align-middle" data-feather="user"></i> <span
                             class="align-middle">Teachers</span> </a>
                 </li>
+                  <li class="sidebar-item">
+                    <a class="sidebar-link" href="">
+                        <i class="align-middle" data-feather="user"></i>
+                        <span class="align-middle">
+                            Input Student' family
+                        </span>
+                    </a>
+                </li>
                 <li class="sidebar-item">
                     <a class="sidebar-link" id="studentopen" href="students.php"> <i class="align-middle"
                             data-feather="user"></i> <span class="align-middle">Students</span> </a>
@@ -35,11 +43,11 @@ if ($_SESSION['admin_nim'] == null) {
 
                 <li class="sidebar-item">
                     <a class="sidebar-link" href="sendfiles.php"> <i class="align-middle" data-feather="book"></i> <span
-                            class="align-middle">Send Files</span> </a>
+                            class="align-middle">Share File</span> </a>
                 </li>
                 <li class="sidebar-item active">
                     <a class="sidebar-link" href="admin_user.php"> <i class="align-middle" data-feather="book"></i>
-                        <span class="align-middle">Admin User</span> </a>
+                        <span class="align-middle">Crate New Admin</span> </a>
                 </li>
             </ul>
         </div>
@@ -91,8 +99,9 @@ if ($_SESSION['admin_nim'] == null) {
                     <div class="alert alert-primary" role="alert" id="insert_message_classes"></div>
                 </nav>
             </div>
-            <div class="container">
-                <div id="datetimepicker-dashboard">
+            <div class="contianer" id="admin_form">
+                <div class="row" id="row_admin">
+                    <div id="datetimepicker-dashboard">
                     <form method="post" id="admin_form" enctype="multipart/form-data">
                         <div class="aler alert-primary" role="alert" id="admin_error"></div>
                         <div class="inputs">
@@ -122,12 +131,13 @@ if ($_SESSION['admin_nim'] == null) {
                                 </div>
                             </div>
                         </div>
-                        <div class="submit_bnt_admin">
-                            <button type="button" name="submit_bnt_admin" id="submit_bnt_admin">
-                                New Admin
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary"name="submit_bnt_admin" id="submit_bnt_admin">
+                                Click me
                             </button>
                         </div>
                     </form>
+                </div>
                 </div>
             </div>
         </main>
@@ -157,4 +167,4 @@ if ($_SESSION['admin_nim'] == null) {
     document.getElementById("admin_nim").value = RandomID();
 </script>
 <?php include('../inc/footer.php'); ?>
-<?php }
+<?php } ?>

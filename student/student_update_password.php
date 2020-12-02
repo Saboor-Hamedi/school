@@ -46,5 +46,5 @@ $confirm_student_password = "";
                 }
             }
         }
-        $db->link->close();
+        $db->closeConnection();
     }

@@ -67,16 +67,21 @@
 			<!-- author -->
 			<div class="mycontent">
 				<!-- make new post -->
-				<div class="post-insert">
+				<section id="post-card">
+					<div class="post-insert">
 					<div class="postitle">
 						<h4 class="text-center">Create post</h4>
 					</div>
 					<div id="insert_message" class="text-center"></div>
-					<form method="POST">
-						<div class="form-group"><input type="text" name="post_title" id="post_title"
-								class="form-control" placeholder="What is you title... ?" autocomplete="off" /></div>
-						<div class="form-group"><textarea name="post_content" id="post_content" class="form-control"
-								cols="30" rows="10" placeholder="Your content...?" autocomplete="off"></textarea></div>
+					<form method="POST" id="post-form">
+						<div class="form-group">
+							<input type="text" name="post_title" onkeyup='saveValue(this);'id="post_title"
+								class="form-control" placeholder="What is you title... ?" 
+								 autocomplete="off" /></div>
+						<div class="form-group">
+							<textarea name="post_content" onkeyup='saveValue(this);' id="post_content" class="form-control"
+								cols="30" rows="10" placeholder="Your content...?" autocomplete="off">
+							</textarea></div>
 						<div class="form-group"><input type="hidden"
 								value="<?php echo $id; ?>"
 								name="post_author_id" id="post_author_id" class="form-control"
@@ -86,6 +91,7 @@
 					<button type="button" class="btn btn-primary" id="insert_post_btn"
 						name="insert_post_btn">Insert</button>
 				</div>
+				</section>
 				<!-- end make new post -->
 			</div>
 			<?php $sql = " SELECT * FROM student INNER JOIN post ON student.nim = post.author_id WHERE student.nim = '$id' ORDER BY post.content_time  DESC ";?>
@@ -98,21 +104,28 @@
 					<div class="post-title">
 						<h3><?php echo $row['title']; ?>
 						</h3>
-						<nav class="drop-box">
-							<div class="submit-drop">
+						 <div class="drop-box">
 
-								<ul class="dropdown">
-									<li><a id="P"
-											onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
-									</li>
-									<li><a id="<?php echo $row['id']; ?>"
-											class="edit_post_btn_home" data-toggle="modal"
-											data-target="#update_home_modal">Edit</a></li>
-									<li><a href="">Tutorial</a></li>
-									<li><a href="">UI Kits</a></li>
-								</ul>
-							</div>
-						</nav>
+                            <div class="submit-drop">
+                                <a class="toggle-dropdown"><i class="fas fa-ellipsis-h"></i></a>
+                                <ul class="dropdown">
+                                    <li>
+                                        <a                                            onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
+                                    </li>
+                                    <li>
+                                        <a id="<?php echo $row['id']; ?>"
+                                            name="edit_post_btn" class="edit_post_btn" data-toggle="modal"
+                                            data-target="#post_modal_update">Edit</a>
+                                    </li>
+                                    <li>
+                                        <a href="">Tutorial</a>
+                                    </li>
+                                    <li>
+                                        <a href="">UI Kits</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
 					</div>
 					<!-- drop down -->
 

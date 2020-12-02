@@ -24,11 +24,11 @@ if (!empty($_POST)) {
         $fileext = explode('.', $filename);
         // this peace of code will change the extention to lowercase
         $fileactualex = strtolower(end($fileext));
-        $allow = array('jpg', 'jpeg', 'png', 'txt', 'pdf', 'doc', 'docx', 'xmls', 'java', 'gif', 'ex');
+        $allow = array('jpg', 'jpeg', 'png', 'txt', 'pdf', 'doc', 'docx', 'xmls', 'java', 'gif', 'ex' ,'html');
         // check if the file is allowed
         if (in_array($fileactualex, $allow)) {
             if ($fileerror === 0) {
-                if ($_FILES['file']['size'] > 2000000) {
+                if ($_FILES['file']['size'] <= 2000000) {
                     $fileDes = '../upload_files/';
                     if (move_uploaded_file($filetmpname, $fileDes . $filename)) {
                         $sql = "INSERT INTO files (nim,teacherid, file_title, file_description, file_attachment)
@@ -66,7 +66,7 @@ if (!empty($_POST)) {
     }
 
          
-    $db->link->close();
+    $db->closeConnection();
 }
 
   

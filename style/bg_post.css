@@ -4,9 +4,9 @@
 
 .mycontent {
   margin: 10px 0;
-
   box-shadow: 0 0 2px 3px rgba(202, 198, 198, 0.445);
   word-wrap: break-word;
+  border-radius: 5px;
 }
 div.mycontent .item .post-title {
   margin: 0;
@@ -29,6 +29,10 @@ div.mycontent .item .post-content {
 }
 .post-insert {
   padding: 15px;
+}
+#post-card{
+  overflow: hidden;
+  height: 110px;
 }
 .post-intro p {
   word-wrap: break-word;
