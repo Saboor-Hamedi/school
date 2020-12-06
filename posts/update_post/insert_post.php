@@ -13,7 +13,7 @@
 
 if (!empty($_POST)) {
     $post_title= mysqli_real_escape_string($db->link, $_POST['post_title']);
-    $post_content= mysqli_real_escape_string($db->link, $_POST['post_content']);
+    $post_content=   mysqli_real_escape_string($db->link, $_POST['post_content']);
     $post_author_id= mysqli_real_escape_string($db->link, $_POST['post_author_id']);
     $sql = $db->link->prepare( "INSERT INTO post(title,content,author_id)
     VALUES(?,?,?)");

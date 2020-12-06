@@ -35,12 +35,11 @@
                 }
             }
             if (navigator.userAgent === 'DEV-Native-ios') {
-                document.body.classList.add("dev-ios-native-body");
+            document.body.classList.add("dev-ios-native-body");
             }
             if (window.frameElement) { // Hide top bar and footer when loaded within iframe
                 document.body.classList.add("hidden-shell");
-            }
-            if (userString && userString.length > 0) {
+            } if (userString && userString.length > 0) {
                 const user = JSON.parse(userString)
                 const numTags = JSON.parse(user.followed_tags).length
                 if (numTags < 6) {
@@ -101,7 +100,6 @@
 
                 </button>
             </div>
-
             <div class="crayons-header--search" id="header-search">
                 <form method="get" action="/search" accept-charset="UTF-8"><input type="hidden" name="utf8" id=""
                         placeholder="" autocomplete="" value="✓"><input
@@ -124,7 +122,6 @@
                     </svg>
 
                 </a>
-
                 <a href="/connect" id="connect-link" class="crayons-header__link" aria-label="Connect">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" role="img"
                         aria-labelledby="ao2h9megnq407zp3b0u64ufv58sbjxn4" class="crayons-icon">
@@ -145,7 +142,6 @@
                         <path d="M20 17h2v2H2v-2h2v-7a8 8 0 1116 0v7zm-2 0v-7a6 6 0 10-12 0v7h12zm-9 4h6v2H9v-2z">
                         </path>
                     </svg>
-
                     <span class="crayons-indicator crayons-indicator--critical hidden"
                         id="notifications-number">1</span>
                 </a>

@@ -138,7 +138,7 @@
 
 					<div class="post-content">
 						<p>
-							<?php echo($row['content']);?>
+							<?php echo str_replace('\n', '<br>', $row['content']);?>
 						</p>
 					</div>
 

@@ -48,12 +48,11 @@ if ($_SESSION['admin_nim'] == null) {
                         <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-toggle="dropdown">
                             <span class="text-dark"><?php echo $row_image['name']; ?></span>
                         </a>
-                        <?php   }
-                            } ?>
-                        <div class="dropdown-menu dropdown-menu-right">
+                        <?php }}?>
+                         <div class="dropdown-menu dropdown-menu-right">
                             <a class="dropdown-item" href="">
                                 <i class="align-middle mr-1" data-feather="user"></i>
-                                <?php echo $id = $_SESSION['admin_nim'];?>
+                                <?php echo $id = $_SESSION['admin_nim']; ?>
                             </a>
                             <a class="dropdown-item" href="#"> <i class="align-middle mr-1"
                                     data-feather="pie-chart"></i> Analytics </a>
@@ -231,17 +230,25 @@ if ($_SESSION['admin_nim'] == null) {
                     </div>
                 </div>
             </section>
-            <!-- files -->
-            <section class="file-box">
-        <div class="alert alert-primary" id="delete_student_file_message" role="alert"></div>
-                <div class="file-grid">
-                <?php 
+
+             
+        <!-- files -->
+                                
+
+                <section class="file-box">
+                    <div class="alert alert-primary" id="delete_student_file_message" role="alert"></div>
+
+                    <div class="file-grid">
+                                    
+                    <?php 
                     $query = "SELECT * FROM student INNER JOIN files ON student.nim = files.nim WHERE student.nim = '$id'  GROUP BY file_attachment";
                     $file_found =$db->select($query);
+                    if($file_found){
+
                     while($row = $file_found->fetch_assoc()){?>
-                        <nav class="file-panel">
-                            <div class="file_title">
-                                <span><?php echo $row['file_title']; ?></span>
+                        <div class="file-panel">
+                            <div class="file-title">
+                                 <span><h5><?php echo $row['file_title']; ?></h5></span>
                                  <span>  <a onclick="delete_student_file('<?php echo $row['file_id'] ?>')"><i class="fas fa-trash"></i></a></span>
                             </div>
 
@@ -258,17 +265,17 @@ if ($_SESSION['admin_nim'] == null) {
                              <div class="file-date">
                                <span> <?php echo $row['send_date']; ?></span>
                             </div> 
-                        </nav>
-                        
-                    <?php } ?>       
-   
-           </div>
-       
-            </section>
+                        </div>
+                    <?php }}else{
+                        echo '<h3>Received file 0</h3>';
+                    } ?>  
 
-            <!-- notes -->
+                    </div>
+                </section>
 
-            <section class="notes">
+        <!-- end files -->
+        <!-- notes -->
+   <section class="notes">
                 <!-- notes -->
                 <header id="header">
                     <nav id="navbar">
@@ -293,10 +300,10 @@ if ($_SESSION['admin_nim'] == null) {
                     <div id="createStickyBtn">+</div>
                 </div>
             </section>
+
+<!-- end notes -->
+           
         </main>
-
-
-
     </div>
 </div>
 

@@ -8,5 +8,6 @@ where do their own actvities, I blog feature for students, where students can sh
 thier knowledge through that blog, it's like facebook, you share post and poeple read it
 I have not add LIKE and COMMENT system yet, hopefully soon I add those features too
  
+New update on sunday/
 
  

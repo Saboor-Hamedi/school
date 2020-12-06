@@ -327,7 +327,7 @@ border-radius: 5px;
 box-shadow: 0 0 2px 3px #ccc;
 }
 /* student files */
-section.file-box{
+.file-box{
   width: 100%;
   padding: 10px;
   margin-top: 1rem;
@@ -339,44 +339,49 @@ section.file-box{
 }
 .file-panel{
   max-width: 100%;
- background-color: hsl(0, 100%, 100%);
+  box-shadow: 0 0 2px 3px #ccc;
 
-box-shadow: 0 0 2px 3px #ccc;
 }
 .file-grid{
- display: grid;
+   display: grid;
    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
    gap: 10px;
 }
-.file_title{
+.file-title{
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  background-color: #888;
+  background-color: #1414141f;
+  
 
 }
-.file_title i{
+.file-title i{
   color: red;
   cursor: pointer;
 }
-.file-attachement
-{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px;
+.file-attachement{
+  min-height: 50px;
+  height: auto;
+  text-align: center;
 }
 .file-attachement a{
   text-decoration: none;
   font-size: 16px;
- 
+   
+}
+.file-attachement a:hover {
+  text-decoration: underline;
 }
 .file-description{
-  padding: 10px;
+
+  padding: 2px;
+  min-height: 200px;
+  height: auto;
+  
 }
 .file-date{
-  background-color: #888;
   padding: 2px;
+  background-color: #1414141f;
   
 }
 .file-date span{
@@ -407,6 +412,7 @@ input:focus {
   background-color: white;
   box-shadow: 0 0 5px 2px #ccc;
   height: 500px;
+  margin-top: 1rem;
   overflow: auto;
 }
 

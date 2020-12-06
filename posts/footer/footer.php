@@ -9,6 +9,12 @@
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../query_script/loadingoverlay.min.js"></script>
 <script src="jquery_ajax/post_ajax.js"></script>
+<!-- <script src="../../query_script/tiny.js"></script> -->
+<script>
+  $("#post_content").blur(function(e) {
+    $(this).html($(this).text());
+  });
+</script>
 <script type="text/javascript">
   setTimeout(function() {
     location.reload();
