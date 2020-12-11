@@ -1,0 +1,159 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+:root{
+    --bg-color: #f3f1f13f;
+    --cards: white;
+    --side-bar: white;
+}
+body {
+	padding: 0;
+    margin: 0;
+    background-color: var(--bg-color);
+}
+/* side bar */
+.side-bar{
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--side-bar);
+}
+/* main section
+ * this is where all content goes 
+ * 
+ *
+*/
+.main-content{
+    margin-left: 250px;
+    max-width: 100%;
+
+}
+/* this is where the body will be executed */
+.left{
+    padding: 1rem;
+    float: left;
+    width: 70%;
+
+}
+/* create post or form */
+.create-post{
+    margin: 0 auto;
+    margin-bottom: 1rem;
+    margin-bottom: 1rem;
+    max-width: 100%;
+    padding: 10px;
+    background-color: var(--cards);
+    box-shadow: 0 0 2px 1px #ccc;
+    position: relative;
+}
+
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+.title{
+    text-align: center;
+}
+.content-body{
+    margin: 0 auto;
+    max-width: 100%;
+    background-color: var(--cards);
+    box-shadow: 0 0 2px 1px #ccc;
+}
+.content-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+.drop-down{
+position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+   cursor: pointer;
+   width: 30px;
+   height: 30px;
+   border-radius: 50%;
+
+}
+.drop-down:hover{
+       background-color: rgba(204, 204, 204, 0.089);
+}
+.dropdown{
+ position: absolute;
+  top: 40px;
+  right: 0;
+  list-style-type: none;
+  width: 150px;
+  background-color: rgb(255, 254, 254);
+  box-shadow: 0 0 4px 1px #ccc;
+  z-index: 1;
+  display: none;
+}
+.dropdown ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.dropdown li{
+    display: block;
+    padding: 10px;
+}
+.dropdown li:hover {
+   background-color: rgba(204, 204, 204, 0.089);
+}
+.dropdown a{
+    text-decoration: none;
+    font-size: 16px;
+}
+/* this is where the suggestion will shown */
+.right{
+    position: relative;
+    float: left;
+    width: 30%;
+    padding: 20px;
+    height: 100vh;
+    background-color: var(--side-bar);
+}
+.right-content{
+    /* position: fixed;
+    top: 0; */
+    padding: 1rem;
+    width: 100%;
+   background-color: rgb(255, 254, 254);
+  box-shadow: 0 0 4px 1px #ccc;
+}
+
+
+@media only screen and (max-width: 1100px){
+    .right{
+        height: auto;
+    }
+}
+@media only screen and (max-width: 900px){
+    .side-bar{
+        width: 0;
+    }
+    .main-content{
+        margin: 0;
+    }
+}
+@media only screen and (max-width: 756px){
+      .left,.right{
+        width: 100%;
+    }
+    .right, .right-content{
+     position: relative;
+     height: auto;
+
+    }
+}

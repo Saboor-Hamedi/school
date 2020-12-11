@@ -86,13 +86,12 @@ body {
 }
 table{
   width: 100%;
+
 }
 thead, tbody, tr, th, td{
   text-align: center;
   padding: 10px;
-  color: white;
-  
- 
+
 }
 #classes_table td:nth-child(3) {
   width: 20px;
@@ -569,23 +568,52 @@ input:focus {
   gap: 10px;
   padding: 5px 0;
 }
-@media (max-width: 900px) {
-.file-grid{
-  
-  grid-template-columns: repeat(2,1fr);
- 
+
+/* settgin panel */
+.setting{
+  max-width: 100%;
+  padding: 10px;
 }
+.setting-panel{
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 10px;
+}
+.setting-card{
+  box-shadow: 0 0 4px 2px #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+.family-card{
+  max-width: 100%;  
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px 2px #ccc;
+
 }
 
 /* end sticky note */
+@media (max-width: 900px) {
+.file-grid {
+  grid-template-columns: repeat(2,1fr);
+}
+.setting-panel{
+  grid-template-columns: repeat(2, 1fr);
+}
+}
 @media only screen and (max-width: 600px) {
   .content {
     width: 100%;
+    padding: 0;
+    margin: 0;
   }
  .file-grid{
-  
   grid-template-columns: repeat(1,1fr);
- 
+}
+.setting-panel{
+  grid-template-columns:repeat(1,1fr);
 }
   @media (max-width: 720px) {
     .sticky {
@@ -594,21 +622,17 @@ input:focus {
       min-height: 145px;
       margin: 15px;
     }
-
     .sticky-content {
       width: 130px;
       min-height: 115px;
       font-size: 14px;
     }
-
     .dropdown-content-hide {
       width: 130px;
     }
-
     .dropdown-content-hide div {
       padding: 10px 10px;
     }
-
     #header {
       font-size: 12px;
     }

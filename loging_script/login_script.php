@@ -5,12 +5,14 @@ if any changes want to make should be here not somewhere else.
 
 class LoginCard
 {
-    private $con ;
+    private $con;
     private $error;
-    public function __construct($con)
-    {
+    public function __construct(
+        $con
+    ) {
         $this->con = $con;
     }
+
     public function __destruct()
     {
     }
@@ -34,12 +36,12 @@ class LoginCard
     {
         return $this->con;
     }
-    
+
     public function check_login($admin_nim, $admin_pass)
     {
         $query = "SELECT * FROM login WHERE admin_nim = '$admin_nim' ";
         $look_query = $this->getConnection()->select($query);
-            
+
         if ($look_query == true) {
             while ($row = $look_query->fetch_assoc()) {
                 $pass_check = password_verify($admin_pass, $row['admin_pass']);
@@ -87,13 +89,13 @@ class LoginCard
                             exit();
                         }
                     }
-                } 
+                }
             }
         }
     }
     // 01:29:39
 
-            
+
     public function Show_Rows($rows)
     {
         $query = "SELECT COUNT(*) FROM $rows";

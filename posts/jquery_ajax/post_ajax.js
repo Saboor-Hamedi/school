@@ -1,5 +1,4 @@
 
-
 // insert post
 $(document).ready(function () {
     $(document).on('click', '#insert_post_btn', function () {
@@ -11,14 +10,12 @@ $(document).ready(function () {
             return false;
         } else {
             $('#post_title');
-
         }
         if (post_content == "") {
             $('#post_content').focus();
             return false;
         } else {
             $('#post_content');
-
         }
         $.ajax({
             url: "update_post/insert_post.php",
@@ -27,15 +24,12 @@ $(document).ready(function () {
                 post_title: post_title,
                 post_content: post_content,
                 post_author_id: post_author_id
-
             },
             success: function (data) {
                 $('#insert_message').html(data);
                  window.localStorage.clear();
-
             }
         });
-
     });
 });
 // keep text after refresh on input and textarea
@@ -64,11 +58,6 @@ $(document).ready(function () {
         $('#post-card').animate({ height: "450px" });
     })
 })
-
-
-
-
- 
 
 // update post
 $(document).ready(function () {

@@ -31,7 +31,7 @@ if ((!isset($_SESSION['user_id']))) {
                     </a>
                 </li>
                   <li class="sidebar-item">
-                    <a class="sidebar-link" href="">
+                    <a class="sidebar-link" href="family.php">
                         <i class="align-middle" data-feather="user"></i>
                         <span class="align-middle">
                             Input Student' family

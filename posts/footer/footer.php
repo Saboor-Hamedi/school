@@ -9,7 +9,25 @@
 <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
 <script src="../../query_script/loadingoverlay.min.js"></script>
 <script src="jquery_ajax/post_ajax.js"></script>
+
+<!-- tinymce bootstrap -->
 <!-- <script src="../../query_script/tiny.js"></script> -->
+
+<script src="https://cdn.tiny.cloud/1/xpxdyct7yd33uqtfja8hvc4mftvswkpl2icypf84mm91yghy/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+  tinymce.init({
+    selector: "textarea",
+    theme_advanced_toolbar_location: "top",
+    branding: false,
+    mode: "exact",
+    setup: function(editor) {
+      editor.on('change', function() {
+        editor.save();
+      });
+    }
+  });
+</script>
+
 <script>
   $("#post_content").blur(function(e) {
     $(this).html($(this).text());

@@ -1,6 +1,5 @@
 <!-- login card -->
 <?php include_once('inc/login_header/header.php');?>
-
     <div>
         <a class="hiddenanchor" id="signup"></a>
         <a class="hiddenanchor" id="signin"></a>

@@ -2,10 +2,10 @@
 class format
 {
     private $Title;
-    protected $counter =0;
+    protected $counter = 0;
     public function __construct()
     {
-        $this->counter =0;
+        $this->counter = 0;
     }
     public function ToUpperCase($upper)
     {
@@ -19,7 +19,7 @@ class format
         $year = date('Y', $convert_date);
         $name_day = date('1', $convert_date);
         $day = date('j', $convert_date);
-        $result = $month . " " . $day . ",  " .$year . "-" .$name_day;
+        $result = $month . " " . $day . ",  " . $year . "-" . $name_day;
         return $result;
     }
     public function BreakLine($line, $width)
@@ -32,23 +32,21 @@ class format
     }
     public function ReadMore($text1, $limit = 3)
     {
-        $text1 = $text1 ."";
+        $text1 = $text1 . "";
         $text1 = substr($text1, 0, $limit);
         $text1 = substr($text1, 0, strrpos($text1, ' '));
-        $text1 = $text1. " ...";
+        $text1 = $text1 . " ...";
         return $text1;
     }
 
-    // setter and getter
-    private function setTitle($Title)
+    // remove html from content 
+    function RemoveHTML($slashes)
     {
-        $this->Title = $Title;
+        $str = '';
+        $str = preg_replace('/\\\\(.?)/', '', $slashes);
+        return $str;
     }
-    private function getTitle()
-    {
-        return $this->Title;
-    }
-       
+
     /*
         this function displays the post time
         every minute this function would load and
@@ -67,10 +65,10 @@ class format
         $weeks   = round($seconds / 604800); // 7*24*60*60;
         $months  = round($seconds / 2629440); //((365+365+365+365+366)/5/12)*24*60*60
         $years   = round($seconds / 31553280); //(365+365+365+365+366)/5 * 24 * 60 * 60
-                    
-  if ($seconds <= 60) {
-      return "Just Now";
-  }
+
+        if ($seconds <= 60) {
+            return "Just Now";
+        }
         if ($minutes <= 60) {
             if ($minutes == 1) {
                 return "one minute ago";
@@ -109,9 +107,4 @@ class format
             }
         }
     }
-
-
 }
-
-
-
