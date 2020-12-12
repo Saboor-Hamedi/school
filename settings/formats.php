@@ -1,7 +1,7 @@
 <?php
 class format
 {
-    private $Title;
+  
     protected $counter = 0;
     public function __construct()
     {
@@ -38,7 +38,6 @@ class format
         $text1 = $text1 . " ...";
         return $text1;
     }
-
     // remove html from content 
     function RemoveHTML($slashes)
     {
@@ -46,7 +45,6 @@ class format
         $str = preg_replace('/\\\\(.?)/', '', $slashes);
         return $str;
     }
-
     /*
         this function displays the post time
         every minute this function would load and
@@ -65,7 +63,6 @@ class format
         $weeks   = round($seconds / 604800); // 7*24*60*60;
         $months  = round($seconds / 2629440); //((365+365+365+365+366)/5/12)*24*60*60
         $years   = round($seconds / 31553280); //(365+365+365+365+366)/5 * 24 * 60 * 60
-
         if ($seconds <= 60) {
             return "Just Now";
         }

@@ -2,13 +2,10 @@
     #update_modal_post {
         width: 100%;
     }
-
     .close:focus {
         outline: none;
     }
-    
 </style>
-
 <div class="modal fade" id="update_home_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
     aria-hidden="true" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog" style="width: 100%;" role="document">
@@ -29,7 +26,6 @@
                                 class="form-control" placeholder="The post ID">
                             <input type="text" id="edit_post_title_home" name="edit_post_title_home"
                                  class="form-control" placeholder="Edit the post title">
-                                
                             <textarea id="edit_post_content_home" name="edit_post_content_home" cols="30" rows="10"
                                 class="form-control" placeholder="Update your contents"></textarea>
                         </form>
@@ -46,6 +42,3 @@
     </div>
 </div>
 
-<script>
-   
-</script>

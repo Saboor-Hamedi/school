@@ -1,159 +1,194 @@
-*,
-*::after,
-*::before {
-	padding: 0;
-	margin: 0;
-	box-sizing: border-box;
+*,*::after, *::before{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 :root{
-    --bg-color: #f3f1f13f;
-    --cards: white;
-    --side-bar: white;
+    --bg-header: #e7e1ee;
+    --bg-main: white;
 }
-body {
-	padding: 0;
-    margin: 0;
-    background-color: var(--bg-color);
-}
-/* side bar */
-.side-bar{
+.nav-header{
+    display: flex;
+    align-items: center;
     position: fixed;
-    left: 0;
     top: 0;
-    bottom: 0;
-    width: 250px;
-    height: 100vh;
-    background-color: var(--side-bar);
+    width: 100%;
+    background-color:var(--bg-header);
+     margin-left: 250px;
+    transition: 0.3s;
+    z-index: 1;
 }
-/* main section
- * this is where all content goes 
- * 
- *
-*/
-.main-content{
+.nav-header .header .close-icon i{
+    font-size: 2rem;
+    color: black;
+    cursor: pointer;
+}
+.side-bar{
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  transition: 0.3s;
+  background-color:var(--bg-header);
+}
+#main{
     margin-left: 250px;
-    max-width: 100%;
-
-}
-/* this is where the body will be executed */
-.left{
-    padding: 1rem;
-    float: left;
-    width: 70%;
-
-}
-/* create post or form */
-.create-post{
-    margin: 0 auto;
-    margin-bottom: 1rem;
-    margin-bottom: 1rem;
-    max-width: 100%;
-    padding: 10px;
-    background-color: var(--cards);
-    box-shadow: 0 0 2px 1px #ccc;
-    position: relative;
-}
-
-
-textarea:focus, input:focus{
-    outline: none;
-}
-
-.title{
-    text-align: center;
-}
-.content-body{
-    margin: 0 auto;
-    max-width: 100%;
-    background-color: var(--cards);
-    box-shadow: 0 0 2px 1px #ccc;
-}
-.content-title{
+    transition: 0.3s;
+    background-color: var(--bg-main);
+    transform: translateY(2.3rem);
     display: flex;
     justify-content: space-between;
+}
+.blog-section{
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 20%);
+    gap: 1rem;
+    width: 100%;
+}
+.innsert-section{
+    max-width: 100%;
+}
+.left{
+    width: 100%;
+    border-radius: 5px;
+}
+ .title{
+    text-align: center;
+    }
+    .create-post{
+        padding: 10px;
+        margin: 0 auto;
+        max-width: 800px;
+        margin-top: 1rem;
+       margin-bottom: 1rem;
+        background-color: white;
+        box-shadow: 0 0 2px 1px #ccc;
+        border-radius: 5px;
+   
+    }
+    textarea{
+        margin-top: 10px;
+    }
+    .footer-btn{
+        margin-top: 10px;
+    }
+   .contents{
+    padding: 10px;
+    margin: 0 auto;
+    max-width: 800px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    box-shadow: 0 0 2px 1px #ccc;
+    border-radius: 5px;
+   }
+     .content-title{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .1rem;
+    }
+    .post-body h3 a{
+        text-decoration: none;
+        color: black;
+    }
+    .drop-down{
+    position: relative;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 1rem;
-}
-.drop-down{
-position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-   cursor: pointer;
-   width: 30px;
-   height: 30px;
-   border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
 
-}
-.drop-down:hover{
-       background-color: rgba(204, 204, 204, 0.089);
-}
-.dropdown{
- position: absolute;
-  top: 40px;
-  right: 0;
-  list-style-type: none;
-  width: 150px;
-  background-color: rgb(255, 254, 254);
-  box-shadow: 0 0 4px 1px #ccc;
-  z-index: 1;
-  display: none;
-}
-.dropdown ul{
+    }
+    .drop-down:hover{
+    background-color: rgba(204, 204, 204, 0.089);
+    }
+    .menu{
+    position: absolute;
+    top: 40px;
+    right: 0;
+    list-style-type: none;
+    width: 150px;
+    background-color: rgb(255, 254, 254);
+    box-shadow: 0 0 4px 1px #ccc;
+    z-index: 1;
+    border-radius: 5px;
+    display: none;
+    }
+   
+    .menu ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-.dropdown li{
-    display: block;
+    }
+    .menu li{
+    display: flex;
+    align-items: center;
+
     padding: 10px;
-}
-.dropdown li:hover {
-   background-color: rgba(204, 204, 204, 0.089);
-}
-.dropdown a{
+    
+    }
+   
+    .menu li:hover {
+    background-color: rgba(204, 204, 204, 0.089);
+    }
+    .menu a{
     text-decoration: none;
     font-size: 16px;
-}
-/* this is where the suggestion will shown */
-.right{
-    position: relative;
-    float: left;
-    width: 30%;
-    padding: 20px;
-    height: 100vh;
-    background-color: var(--side-bar);
-}
-.right-content{
-    /* position: fixed;
-    top: 0; */
-    padding: 1rem;
-    width: 100%;
-   background-color: rgb(255, 254, 254);
-  box-shadow: 0 0 4px 1px #ccc;
-}
-
-
-@media only screen and (max-width: 1100px){
-    .right{
-        height: auto;
+    color: black;
     }
+.right{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 10px;
+    right: 5px;
+    height: 600px;
+    background-color: rgb(255, 254, 254);
+    box-shadow: 0 0 4px 1px #ccc;
+    border-radius: 5px;
+}
+
+@media only screen and (max-width: 1250px){
+    .main-content{
+        padding: 0;
+    }
+  .blog-section{
+       grid-template-columns: 1fr minmax(auto, 30%);
+  }
 }
 @media only screen and (max-width: 900px){
     .side-bar{
         width: 0;
     }
-    .main-content{
+    #main, .nav-header{
         margin: 0;
     }
+   
 }
-@media only screen and (max-width: 756px){
-      .left,.right{
+@media only screen and (max-width: 750px){
+    .innsert-section{
+        width: 100%;
+        padding: 10px;
+    }
+    .blog-section{
+        grid-template-columns: repeat(1,1fr);
+    }
+    .left{
         width: 100%;
     }
-    .right, .right-content{
-     position: relative;
-     height: auto;
-
+    .create-post{
+        width: 100%;
+    }
+   
+    .right{
+        height: auto;
     }
 }

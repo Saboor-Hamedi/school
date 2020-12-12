@@ -22,7 +22,7 @@ if ($_SESSION['admin_nim'] == null) {
                         </i> <span class="align-middle">Home</span> </a>
                 </li>
                 <li class="sidebar-item">
-                    <a class="sidebar-link" href="../posts/blog-post.php"> <i class="align-middle"
+                    <a class="sidebar-link" href="../blog/blog.php"> <i class="align-middle"
                             data-feather="sliders"> </i> <span class="align-middle">Post</span> </a>
                 </li>
                 <li class="sidebar-item">
