@@ -41,7 +41,6 @@ class LoginCard
     {
         $query = "SELECT * FROM login WHERE admin_nim = '$admin_nim' ";
         $look_query = $this->getConnection()->select($query);
-
         if ($look_query == true) {
             while ($row = $look_query->fetch_assoc()) {
                 $pass_check = password_verify($admin_pass, $row['admin_pass']);
@@ -54,21 +53,17 @@ class LoginCard
                         $_SESSION['admin_nim'] = $row['admin_nim'];
                         $_SESSION['amdin_pass'] = $row['admin_pass'];
                         $_SESSION['user_id'] = false;
-
                         include_once('./settings/lastonline.php');
                         AdminLastLoggedin($admin_nim);
                         header("Location: ../static/index.php");
                         exit();
                     }
                 }
-                // 08:31:24
-                // 09:06:07
-                // 16328062132605
             }
         } elseif ($look_query == true) {
             echo  $this->setError("Wrong password Or ID");
         } else {
-            $s_query =  "SELECT * FROM student WHERE nim = '$admin_nim'  LIMIT 1";
+            $s_query =  "SELECT * FROM student WHERE nim = '$admin_nim'";
             $s_look_query = $this->getConnection()->select($s_query);
             if ($s_look_query == true) {
                 while ($s_row = $s_look_query->fetch_assoc()) {
@@ -93,9 +88,6 @@ class LoginCard
             }
         }
     }
-    // 01:29:39
-
-
     public function Show_Rows($rows)
     {
         $query = "SELECT COUNT(*) FROM $rows";

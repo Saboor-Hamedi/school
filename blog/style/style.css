@@ -109,11 +109,11 @@
 
     }
     .drop-down:hover{
-    background-color: rgba(204, 204, 204, 0.089);
+     background-color: rgba(204, 204, 204, 0.089);
     }
     .menu{
     position: absolute;
-    top: 40px;
+    top: 0px;
     right: 0;
     list-style-type: none;
     width: 150px;
@@ -132,11 +132,8 @@
     .menu li{
     display: flex;
     align-items: center;
-
     padding: 10px;
-    
     }
-   
     .menu li:hover {
     background-color: rgba(204, 204, 204, 0.089);
     }
@@ -145,17 +142,36 @@
     font-size: 16px;
     color: black;
     }
-.right{
+    .right{
     position: -webkit-sticky;
     position: sticky;
-    top: 10px;
+    top: 0px;
     right: 5px;
-    height: 600px;
+    height: 727px;
     background-color: rgb(255, 254, 254);
-    box-shadow: 0 0 4px 1px #ccc;
+    /* box-shadow: 0 0 4px 1px #ccc; */
     border-radius: 5px;
 }
-
+.inner-suggestion ul{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+.inner-suggestion li{
+    padding: 10px 15px;
+    margin: 10px;
+    background-color: white;
+    /* box-shadow: 0 0 4px #ccc ; */
+    transition: .5s;
+}
+.inner-suggestion li:hover{
+    background-color: rgba(204, 204, 204, 0.089);
+}
+.inner-suggestion a{
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
 @media only screen and (max-width: 1250px){
     .main-content{
         padding: 0;

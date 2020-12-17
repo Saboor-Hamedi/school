@@ -13,19 +13,24 @@ if ($_SESSION['admin_nim'] == null) {
 	<div class="wrapper">
 		<nav id="sidebar" class="sidebar">
 			<div class="sidebar-content js-simplebar">
-				<a class="sidebar-brand" href="index.php"> <span class="align-middle">A.S Private High School</span> </a>
+				<a class="sidebar-brand" href="index.php">
+					<span class="align-middle">A.S Private High School</span> </a>
 				<ul class="sidebar-nav"> <i class="align-middle" data-feather="">
 						<hr />
 					</i>
 					</i>
-					<li class="sidebar-item">
-						<a class="sidebar-link" href="../posts/homepost.php"> <i class="align-middle" data-feather="sliders">
-							</i> <span class="align-middle">Post</span>
+					<li class="sidebar-item ">
+						<a class="sidebar-link" href="student_account.php">
+							<i class="align-middle" data-feather="sliders">
+							</i> <span class="align-middle">Home</span>
 						</a>
 					</li>
 					<li class="sidebar-item">
-						<a class="sidebar-link" href="student_account.php"> <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Home</span> </a>
+						<a class="sidebar-link" href="../blog/blog.php">
+						 <i class="align-middle" data-feather="sliders"> </i> 
+						 <span class="align-middle">Post</span> </a>
 					</li>
+
 					<li class="sidebar-item active">
 						<a class="sidebar-link" href="student_settings.php"> <i class="align-middle" data-feather="user"></i> <span class="align-middle">Settings</span> </a>
 					</li>
@@ -60,7 +65,7 @@ if ($_SESSION['admin_nim'] == null) {
 			</div>
 			<!-- change password -->
 			<div class="main">
-				
+
 				<main class="content">
 					<div class="custom-bread">
 						<nav aria-label="breadcrumb">

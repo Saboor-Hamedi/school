@@ -12,11 +12,9 @@
                             <?php echo $check_login->getError(); ?>
                             <?php  if (count($errors) > 0) : ?>
                             <?php foreach ($errors as $error) : ?>
-
                             <div>
                                 <?php echo $error ?>
                             </div>
-
                             <?php endforeach ?>
                             <?php  endif ?>
                         </div>
@@ -34,12 +32,10 @@
                         </div>
 
                         <div class="clearfix"></div>
-
                         <div class="separator">
                             <p class="change_link">New to site?
                                 <a href="#signup" class="to_register"> Create Account </a>
                             </p>
-
                             <div class="clearfix"></div>
                             <br />
                             <div>
@@ -50,7 +46,6 @@
                     </form>
                 </section>
             </div>
-
             <div id="register" class="animate form registration_form">
                 <section class="login_content">
                 </section>

@@ -3,6 +3,9 @@
 <script src="../query_script/loadingoverlay.min.js"></script>
 <script src="upload_file_query/insert_blog.js">
 </script>
+
+</script>
+
 <script>
     $(function() {
         let val = $(".menu").hide();

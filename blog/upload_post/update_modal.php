@@ -1,9 +1,9 @@
 <!-- Modal -->
-<div class="modal fade" id="update_home_modal" tabindex="-1" role="dialog"  data-keyboard="false" data-backdrop="static">
+<div class="modal fade" id="update_home_modal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Update</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
@@ -19,8 +19,13 @@
                         </div>
                         <div class="input-group">
                             <textarea id="edit_post_content" name="edit_post_content" cols="30" rows="10" class="form-control" placeholder="Update your contents"></textarea>
-
                         </div>
+
+                        <script>
+                            // function onLoad() {
+                            //     CKEDITOR.replace('edit_post_content');
+                            // }
+                        </script>
                     </form>
                 </div>
             </div>

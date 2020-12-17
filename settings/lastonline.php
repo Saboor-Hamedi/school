@@ -20,7 +20,7 @@ $id = 0 ;
          global $db;
          $logged = "SELECT * FROM adminlastloggedin WHERE admin_nim  = '$admin_nim' LIMIT 1";
          $exist_id = $db->select($logged);
-         if (mysqli_num_rows($exist_id) ==1) {
+         if ($exist_id) {
              $update_logged = "UPDATE adminlastloggedin set loggedintime = NOW() WHERE admin_nim = '$id'";
              $db->update($update_logged);
          } else {
@@ -30,14 +30,13 @@ $id = 0 ;
      }
 
     //  student
-
       function StudentLastOnLline($admin_nim)
       {
           global $id ;
           global $db;
           $logged = "SELECT * FROM studentlastlogged WHERE nim  = '$admin_nim' LIMIT 1";
           $exist_id = $db->select($logged);
-          if (mysqli_num_rows($exist_id) ==1) {
+          if ($exist_id) {
               $update_logged = "UPDATE studentlastlogged set loggedtime = NOW() WHERE nim = '$id'";
               $db->update($update_logged);
           } else {

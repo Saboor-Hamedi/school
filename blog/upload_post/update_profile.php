@@ -18,6 +18,7 @@ if (!empty($_POST)) {
         echo 'Data is updating...';
         echo '
             <script>
+            
             $.LoadingOverlay("show");
             setTimeout(function(){
             window.location.reload();
