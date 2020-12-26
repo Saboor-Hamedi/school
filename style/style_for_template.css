@@ -24,10 +24,12 @@ body {
   box-shadow: 0 0 5px 3px white;
 }
 .card {
+  padding: 10px;
   display: flex;
   justify-content: center;
   background-color: transparent;
-  box-shadow: 0 0 5px 3px white;
+  box-shadow: 0 0 5px 3px #ccc;
+  
 }
 #row-gap{
   padding: 0;

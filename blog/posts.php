@@ -14,64 +14,51 @@ if ($_SESSION['admin_nim'] === null) {
 ?>
 <?php $admin_nim = $_SESSION['admin_nim']; ?>
 <?php include('header/header.php'); ?>
-<main id="main">
-    <section class="blog-section">
-        <div class="innsert-section">
-            <?php $sql = "SELECT * FROM student INNER JOIN post 
-                     ON student.nim = post.author_id WHERE post.id = '$id'  
-                       ORDER BY post.content_time  DESC"; ?>
-            <?php $post = $db->select($sql); ?>
-            <?php if ($post) { ?>
-                <?php while ($row = $post->fetch_assoc()) { ?>
-                    <div class="contents">
-                        <div class="content-title">
-                            <div class="inner-title">
-                                <strong><?php echo $row['name']; ?></strong>
-                                <br>
-                                <small>
-                                    <?php echo $fm->display_post_time($row['content_time']); ?>
-                                </small>
-                            </div>
-                            <!-- if the post does not belong to the user hide the edit and delete button -->
-                        </div>
-                        <div class="post-body">
-                            <h3>
-                                <?php echo $fm->ToUpperCase($fm->RemoveHTML($row['title'])); ?>
-                            </h3>
-                        </div>
-                        <div class="post-content">
-                            <?php echo $fm->RemoveHTML($row['content']); ?>
-                        </div>
+<nav class="post-navbar">
+    <header class="header">
+        <!-- <div class="close-icon">
+            <i class='bx bx-menu' id="postMenu" ></i>
+        </div> -->
+    </header>
+</nav>
+
+<section class="post-section">
+    <div class="backTop">
+        <a id="backTopbtn"><i class='bx bxs-chevron-up-circle'></i></a>
+    </div>
+    <div class="post-box"></div>
+    <?php $sql = "SELECT * FROM student INNER JOIN post ON student.nim = post.author_id WHERE post.id = '$id'  ORDER BY post.content_time  DESC"; ?>
+    <?php $post = $db->select($sql); ?>
+    <?php if ($post) { ?>
+        <?php while ($row = $post->fetch_assoc()) { ?>
+            <div class="post-card">
+                <div class="post-title">
+                    <div class="back">
+                        <a href="blog.php"><i class='bx bx-arrow-back'> </i></a>
                     </div>
-            <?php }} ?>
-        </div>
-        <div class="right">
-            <div class="suggestion">
-                <div class="inner-suggestion">
-                    <?php
-                    $sql = " SELECT * FROM student INNER JOIN post
-                                ON student.nim = post.author_id 
-                                ORDER BY post.content_time DESC";
-                    ?>
-                    <?php $post = $db->select($sql); ?>
-                    <?php if ($post) { ?>
-                        <?php while ($row = $post->fetch_assoc()) { ?>
-                            <ul>
-                                <li>
-                                    <?php if($row['nim'] == '$admin_nim'){?>
-                                        <a href="posts.php?id=<?php echo base64_encode($row['id']); ?>">
-                                            <?php echo $row['title']; ?>
-                                        </a>
-                                        <?php }else{?>
-                                            
-                                        <?php } ?>
-                                </li>
-                            </ul>
-                    <?php }
-                    } ?>
+                    <h1><?php echo $row['title']; ?></h1>
                 </div>
+                <?php echo $row['content']; ?>
             </div>
-        </div>
-    </section>
-</main>
+    <?php }
+    } ?>
+</section>
+<section class="suggest-section">
+    <?php $query = "SELECT * FROM post LIMIT 4 OFFSET 1";
+    $post = $db->select($query);
+    if ($post) {
+        while ($result = $post->fetch_assoc()) { ?>
+            <div class="post-card">
+                <h4>
+                    <a href="posts.php?id=<?php echo base64_encode($result['id']); ?>">
+                        <?php echo $result['title']; ?>
+                    </a>
+                </h4>
+                <p>
+                    <?php echo $fm->ReadMore($result['content'], 150); ?>
+                </p>
+            </div>
+    <?php }
+    } ?>
+</section>
 <?php include('footer/footer.php'); ?>

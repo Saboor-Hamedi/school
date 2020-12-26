@@ -111,7 +111,7 @@ if ((!isset($_SESSION['user_id']))) {
                                 </div>
                                 <div class="form-box">
                                     <input type="password" name="old_admin_password" class="form-control" id="old_admin_password" placeholder="Enter your old password" autocomplete="off" />
-                                    <input type="password" name="new_admin_password" class="form-control" id="new_admin_password" placeholder="Enter your new password" autocapitalize="off" />
+                                    <input type="password" name="new_admin_password" class="form-control" id="new_admin_password" placeholder="Enter your new password" autocomplete="off" />
                                     <input type="password" name="confirm_admin_password" class="form-control" id="confirm_admin_password" placeholder="Confirm your new password" autocomplete="off" />
                                 </div>
                                 <div class="modal-footer">

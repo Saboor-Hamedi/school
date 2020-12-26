@@ -26,18 +26,26 @@ class format
     {
         echo  wordwrap($line, $width, '<br>', true);
     }
-    public function increment()
-    {
-        return ++$this->counter;
-    }
-    public function ReadMore($text1, $limit = 3)
+    public function ReadMore($text1, $limit = 400)
     {
         $text1 = $text1 . "";
         $text1 = substr($text1, 0, $limit);
         $text1 = substr($text1, 0, strrpos($text1, ' '));
-        $text1 = $text1 . " ...";
+        $text1 = $text1 . ",";
         return $text1;
     }
+    public function increment()
+    {
+        return ++$this->counter;
+    }
+    // public function ReadMore($text1, $limit = 3)
+    // {
+    //     $text1 = $text1 . "";
+    //     $text1 = substr($text1, 0, $limit);
+    //     $text1 = substr($text1, 0, strrpos($text1, ' '));
+    //     $text1 = $text1 . " ...";
+    //     return $text1;
+    // }
     // remove html from content 
     function RemoveHTML($slashes)
     {

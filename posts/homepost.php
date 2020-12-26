@@ -29,7 +29,8 @@ if ($_SESSION['admin_nim'] === null) {
 								<?php $fm->BreakLine($row['bio'], 95, true); ?>
 								<br />
 
-						<?php }} ?>
+						<?php }
+						} ?>
 					</div>
 
 					<hr />
@@ -64,7 +65,7 @@ if ($_SESSION['admin_nim'] === null) {
 				<!-- author -->
 				<div class="mycontent">
 					<!-- make new post -->
-					<section id="post-card" >
+					<section id="post-card">
 						<div class="post-insert">
 							<div class="postitle">
 								<h4 class="text-center">Create post</h4>
@@ -103,7 +104,7 @@ if ($_SESSION['admin_nim'] === null) {
 													<a onclick="delete_home_post_function('<?php echo $row['id']; ?>')">Delete</a>
 												</li>
 												<li>
-													<a id="<?php echo $row['id']; ?>" name="edit_post_btn" class="edit_post_btn" data-toggle="modal" data-target="#post_modal_update">Edit</a>
+													<a BreakLine>Edit</a>
 												</li>
 											</ul>
 										</div>
@@ -114,14 +115,17 @@ if ($_SESSION['admin_nim'] === null) {
 									<?php echo $fm->display_post_time($row['content_time']); ?>
 								</div>
 								<div class="post-content">
-										<?php echo $fm->RemoveHTML($row['content']); ?>
+									<?php echo $fm->RemoveHTML($row['content']); ?>
 								</div>
 							</div>
 						</div>
-				<?php }}?>
-				<div><h1>Hello</h1></div>
+				<?php }
+				} ?>
+				<div>
+					<h1>Hello</h1>
+				</div>
 			</div>
 		</section>
-	<?php include('footer/footer.php'); ?>
+		<?php include('footer/footer.php'); ?>
 	<?php } ?>
-</div>
+	</div>

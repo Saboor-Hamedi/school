@@ -12,11 +12,11 @@
                     <form id="edit_post_form" method="post">
                         <div class="input-group">
                             <input type="hidden" id="edit_post_id" name="edit_post_id" class="form-control" placeholder="The post ID">
-
                         </div>
                         <div class="input-group">
                             <input type="text" id="edit_post_title" name="edit_post_title" class="form-control" placeholder="Edit the post title">
                         </div>
+                        <br>
                         <div class="input-group">
                             <textarea id="edit_post_content" name="edit_post_content" cols="30" rows="10" class="form-control" placeholder="Update your contents"></textarea>
                         </div>

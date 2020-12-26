@@ -114,12 +114,10 @@ if ((!isset($_SESSION['user_id']))) {
                             <div class="export-buttons">
                                 <button type="button" id="TeacherExport" class="btn btn-primary"><i class="fas fa-file-csv">
                                         CSV</i></button>
+                               <a href="../pdf/teacher_pdf.php" type="button"class="btn btn-primary" target="_blank"><i class="fas fa-file-pdf"> PDF</i></a>
 
-                                <form action="../pdf/generate_pdf.php" method="POST" target="_blank">
-                                    <button type="submit" name="TeacherExportpdf" class="btn btn-primary">
-                                        <i class="fas fa-file-pdf"> PDF</i>
-                                    </button>
-                                </form>
+                                  
+                            
                             </div>
                             <!-- here is the teachers table everything about teacher is here except password   -->
                             <div class="card-body" id="turn-on-scroll">

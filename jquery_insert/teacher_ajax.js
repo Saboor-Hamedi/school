@@ -3,6 +3,7 @@
 // this file belongs to the teachers, where
 // we insert, delete, update, view, and export the table
 // 
+
 $(document).ready(function(){
     $(document).on('click', '#insert_teacher_btn', function(e){
         e.preventDefault();
@@ -186,4 +187,6 @@ $(function(){
         
     })
  });
+
+// reuest for pdf 
 
